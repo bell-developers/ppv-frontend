@@ -2,29 +2,6 @@ import { styled } from 'baseui';
 import { BlockOverrides } from 'baseui/block';
 import { ButtonOverrides } from 'baseui/button';
 
-const HomeBody = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: '100vw',
-    minHeight: '100vh',
-    padding: '0 10em',
-});
-
-const HomeHeaderOverride = {
-    Root: {
-        style: {
-            borderBottomWidth: 'none',
-            borderBottomStyle: 'none',
-            borderBottomColor: 'none',
-            paddingLeft: '5em',
-            position: 'fixed',
-            top: '0',
-            left: '0',
-            right: '0',
-        },
-    },
-};
-
 const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
     alignItems: 'center',
@@ -55,7 +32,7 @@ const ValueProposalSubtitleOverride: BlockOverrides = {
 const ValueProposalCTAOverride: ButtonOverrides = {
     BaseButton: {
         style: ({ $theme }) => ({
-            backgroundColor: $theme.colors.primaryA,
+            backgroundColor: $theme.colors.accent,
             width: '7em',
         }),
     },
@@ -86,8 +63,6 @@ const FakeImage2 = styled('div', ({ $theme }) => ({
 }));
 
 export {
-    HomeBody,
-    HomeHeaderOverride,
     ValueProposalSection,
     ValueProposalContent,
     ValueProposalSubtitleOverride,
