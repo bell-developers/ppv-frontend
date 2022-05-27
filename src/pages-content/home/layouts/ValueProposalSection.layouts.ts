@@ -11,6 +11,7 @@ const ValueProposalSection = styled('div', ({ $theme }) => ({
     width: '100%',
     borderBottom: `1px solid ${$theme.colors.borderOpaque}`,
     boxSizing: 'border-box',
+    maxWidth: '65em',
 }));
 
 const ValueProposalContent = styled('div', {

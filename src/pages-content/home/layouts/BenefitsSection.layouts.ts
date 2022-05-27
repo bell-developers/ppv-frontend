@@ -7,6 +7,7 @@ export const BenefitsSection = styled('div', {
     padding: '5em 0',
     minHeight: '100vh',
     width: '100%',
+    maxWidth: '65em',
 });
 
 export const BenefitsTitleContainer = styled('div', {
@@ -37,6 +38,7 @@ export const BenefitsSubtitleOverride = {
 export const BenefitContainer = styled('div', ({ $theme }) => ({
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '6.5em',
     padding: '5em 6.5em',
     backgroundColor: $theme.colors.backgroundPrimary,

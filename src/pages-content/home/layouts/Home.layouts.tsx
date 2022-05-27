@@ -4,6 +4,7 @@ import { StyledNavigationItem } from 'baseui/header-navigation';
 const HomeBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     maxWidth: '100vw',
     minHeight: '100vh',
     padding: '0 10em',
@@ -17,6 +18,8 @@ const HomeHeaderOverrides = {
             top: '0',
             left: '0',
             right: '0',
+            width: '100%',
+            maxWidth: '65em',
             borderBottomWidth: 'none',
             borderBottomStyle: 'none',
             borderBottomColor: 'none',
