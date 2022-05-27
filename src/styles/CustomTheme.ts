@@ -34,7 +34,7 @@ const overrides = {
         },
         ParagraphLarge: {
             fontSize: '1.125em',
-            lineHeight: '1.1em',
+            lineHeight: '1.3em',
         },
     },
 };
