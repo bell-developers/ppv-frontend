@@ -1,4 +1,4 @@
-import { styled } from 'baseui';
+import { styled, withStyle } from 'baseui';
 import { StyledNavigationItem } from 'baseui/header-navigation';
 
 const HomeBody = styled('div', ({ $theme }) => ({
@@ -32,7 +32,7 @@ const HomeHeaderOverrides = {
     },
 };
 
-const CustomHomeLogo = styled(StyledNavigationItem, {
+const CustomHomeLogo = withStyle(StyledNavigationItem, {
     paddingLeft: 0,
 });
 
