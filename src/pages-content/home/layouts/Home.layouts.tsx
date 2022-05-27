@@ -1,4 +1,5 @@
 import { styled } from 'baseui';
+import { StyledNavigationItem } from 'baseui/header-navigation';
 
 const HomeBody = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -9,19 +10,24 @@ const HomeBody = styled('div', ({ $theme }) => ({
     backgroundColor: $theme.colors.backgroundPrimary,
 }));
 
-const HomeHeaderOverride = {
+const HomeHeaderOverrides = {
     Root: {
         style: {
-            borderBottomWidth: 'none',
-            borderBottomStyle: 'none',
-            borderBottomColor: 'none',
-            paddingLeft: '5em',
-            position: 'fixed',
+            position: 'sticky',
             top: '0',
             left: '0',
             right: '0',
+            borderBottomWidth: 'none',
+            borderBottomStyle: 'none',
+            borderBottomColor: 'none',
+            backgroundColor: 'rgb(255, 255, 255, 0.98)',
+            zIndex: 1,
         },
     },
 };
 
-export { HomeBody, HomeHeaderOverride };
+const CustomHomeLogo = styled(StyledNavigationItem, {
+    paddingLeft: 0,
+});
+
+export { HomeBody, HomeHeaderOverrides, CustomHomeLogo };

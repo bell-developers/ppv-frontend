@@ -1,10 +1,5 @@
 import { NextPage } from 'next';
-import {
-    ALIGN,
-    HeaderNavigation,
-    StyledNavigationItem,
-    StyledNavigationList,
-} from 'baseui/header-navigation';
+import { ALIGN, HeaderNavigation, StyledNavigationList } from 'baseui/header-navigation';
 import {
     DisplayMedium,
     DisplaySmall,
@@ -23,7 +18,11 @@ import {
     ValueProposalSubtitleOverride,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 import { Button } from 'baseui/button';
-import { HomeBody, HomeHeaderOverride } from 'pages-content/home/layouts/Home.layouts';
+import {
+    CustomHomeLogo,
+    HomeBody,
+    HomeHeaderOverrides,
+} from 'pages-content/home/layouts/Home.layouts';
 import {
     BenefitContainer,
     BenefitContainerReversed,
@@ -39,13 +38,13 @@ const HomePage: NextPage = () => {
     return (
         <HomeBody>
             {/* @ts-ignore */}
-            <HeaderNavigation overrides={HomeHeaderOverride}>
+            <HeaderNavigation overrides={HomeHeaderOverrides}>
                 <StyledNavigationList $align={ALIGN.left}>
-                    <StyledNavigationItem>
+                    <CustomHomeLogo>
                         <a href='/'>
                             <LabelLarge>Logo</LabelLarge>
                         </a>
-                    </StyledNavigationItem>
+                    </CustomHomeLogo>
                 </StyledNavigationList>
             </HeaderNavigation>
             <ValueProposalSection>
