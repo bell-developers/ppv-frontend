@@ -5,19 +5,19 @@ import { ButtonOverrides } from 'baseui/button';
 const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: '2.5em',
-    height: '100vh',
+    gap: '2.25em',
+    minHeight: '100vh',
     width: '100%',
     borderBottom: `1px solid ${$theme.colors.borderOpaque}`,
     boxSizing: 'border-box',
-    maxWidth: '65em',
+    maxWidth: '1250px',
+    fontSize: 'clamp(14px, 1.2vw, 24px)',
 }));
 
 const ValueProposalContent = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    width: '25em',
+    width: '100%',
     gap: '1em',
 });
 
@@ -26,6 +26,7 @@ const ValueProposalSubtitleOverride: BlockOverrides = {
         style: ({ $theme }) => ({
             color: $theme.colors.contentSecondary,
             fontWeight: '400',
+            width: '80%',
         }),
     },
 };
@@ -47,14 +48,16 @@ const ValueProposalImages = styled('div', {
 });
 
 const FakeImage1 = styled('div', ({ $theme }) => ({
-    width: '17em',
+    minWidth: '16em',
+    width: '100%',
     height: '27.5625em',
     background: 'grey',
     borderRadius: $theme.borders.radius300,
 }));
 
 const FakeImage2 = styled('div', ({ $theme }) => ({
-    width: '17em',
+    minWidth: '16em',
+    width: '100%',
     height: '27.5625em',
     background: 'red',
     borderRadius: $theme.borders.radius300,
