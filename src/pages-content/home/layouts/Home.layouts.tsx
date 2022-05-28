@@ -9,6 +9,12 @@ const HomeBody = styled('div', ({ $theme }) => ({
     minHeight: '100vh',
     padding: '0 10em',
     backgroundColor: $theme.colors.backgroundPrimary,
+    [$theme.mediaQuery.medium]: {
+        padding: '0 4em',
+    },
+    [$theme.mediaQuery.small]: {
+        padding: '0 1em',
+    },
 }));
 
 const HomeHeaderOverrides = {
