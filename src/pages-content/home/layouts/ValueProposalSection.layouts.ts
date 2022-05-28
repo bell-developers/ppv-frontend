@@ -1,6 +1,7 @@
 import { styled } from 'baseui';
 import { BlockOverrides } from 'baseui/block';
 import { ButtonOverrides } from 'baseui/button';
+import Image from 'next/image';
 
 const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -71,17 +72,19 @@ const ValueProposalImages = styled('div', ({ $theme }) => ({
     },
 }));
 
-const FakeImage1 = styled('div', ({ $theme }) => ({
+const ValueProposalImageContainer1 = styled('div', ({ $theme }) => ({
+    position: 'relative',
     gridRow: '1 / 7',
     gridColumn: '1 / 5',
-    background: 'grey',
-    borderRadius: $theme.borders.radius300,
 }));
 
-const FakeImage2 = styled('div', ({ $theme }) => ({
+const ValueProposalImageContainer2 = styled('div', ({ $theme }) => ({
+    position: 'relative',
     gridRow: '2 / 8',
     gridColumn: '4 / 8',
-    background: 'red',
+}));
+
+export const ValueProposalImage = styled(Image, ({ $theme }) => ({
     borderRadius: $theme.borders.radius300,
 }));
 
@@ -91,6 +94,6 @@ export {
     ValueProposalSubtitleOverride,
     ValueProposalCTAOverride,
     ValueProposalImages,
-    FakeImage1,
-    FakeImage2,
+    ValueProposalImageContainer1,
+    ValueProposalImageContainer2,
 };

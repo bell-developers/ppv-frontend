@@ -8,13 +8,14 @@ import {
     ParagraphLarge,
 } from 'baseui/typography';
 import {
-    FakeImage1,
-    FakeImage2,
     ValueProposalContent,
     ValueProposalCTAOverride,
     ValueProposalImages,
     ValueProposalSection,
     ValueProposalSubtitleOverride,
+    ValueProposalImageContainer1,
+    ValueProposalImageContainer2,
+    ValueProposalImage,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 import { Button } from 'baseui/button';
 import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
@@ -45,8 +46,20 @@ const HomePage: NextPage = () => {
                     </Button>
                 </ValueProposalContent>
                 <ValueProposalImages>
-                    <FakeImage1 />
-                    <FakeImage2 />
+                    <ValueProposalImageContainer1>
+                        <ValueProposalImage
+                            src='/girl1.jpg'
+                            alt='Product Image 1'
+                            layout='fill'
+                        />
+                    </ValueProposalImageContainer1>
+                    <ValueProposalImageContainer2>
+                        <ValueProposalImage
+                            src='/girl2.jpg'
+                            alt='Product Image 2'
+                            layout='fill'
+                        />
+                    </ValueProposalImageContainer2>
                 </ValueProposalImages>
             </ValueProposalSection>
             <BenefitsSection>
