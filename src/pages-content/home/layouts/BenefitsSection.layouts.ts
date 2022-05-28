@@ -5,7 +5,6 @@ export const BenefitsSection = styled('div', {
     flexDirection: 'column',
     gap: '5em',
     padding: '5em 0',
-    minHeight: '100vh',
     width: '100%',
     maxWidth: '1250px',
     fontSize: 'clamp(13px, 1.2vw, 24px)',
@@ -43,7 +42,14 @@ export const BenefitContainer = styled('div', ({ $theme }) => ({
     gap: '6.5em',
     padding: '5em 6.5em',
     backgroundColor: $theme.colors.backgroundPrimary,
-    boxShadow: '0 16px 64px rgba(0, 0, 0, 0.06)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)',
+    [$theme.mediaQuery.medium]: {
+        padding: '3vh 6vw',
+        gap: '5vw',
+    },
+    [$theme.mediaQuery.small]: {
+        flexDirection: 'column-reverse',
+    },
 }));
 
 export const BenefitContainerReversed = withStyle(BenefitContainer, {
@@ -54,11 +60,11 @@ export const BenefitContent = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '1.5em',
-    width: '23.4em',
+    width: '100%',
 });
 
 export const BenefitImage = styled('div', ({ $theme }) => ({
-    width: '19.5em',
+    width: '100%',
     height: '16.25em',
     background: $theme.colors.backgroundInverseSecondary,
     borderRadius: $theme.borders.radius300,

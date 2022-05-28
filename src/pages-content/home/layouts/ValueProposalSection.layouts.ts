@@ -61,7 +61,6 @@ const ValueProposalImages = styled('div', ({ $theme }) => ({
     gridTemplateRows: 'repeat(7, 1fr)',
     width: '100%',
     height: '80%',
-    backgroundColor: 'blue',
     [$theme.mediaQuery.medium]: {
         height: '60%',
         width: '90%',
