@@ -1,6 +1,6 @@
 import { styled } from 'baseui';
 
-const HomeBody = styled('div', ({ $theme }) => ({
+export const HomeBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -15,5 +15,3 @@ const HomeBody = styled('div', ({ $theme }) => ({
         padding: '0 1em',
     },
 }));
-
-export { HomeBody };

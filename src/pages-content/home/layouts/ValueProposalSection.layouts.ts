@@ -3,7 +3,7 @@ import { BlockOverrides } from 'baseui/block';
 import { ButtonOverrides } from 'baseui/button';
 import Image from 'next/image';
 
-const ValueProposalSection = styled('div', ({ $theme }) => ({
+export const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
     alignItems: 'center',
     alignContent: 'center',
@@ -27,7 +27,7 @@ const ValueProposalSection = styled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalContent = styled('div', ({ $theme }) => ({
+export const ValueProposalContent = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -37,7 +37,7 @@ const ValueProposalContent = styled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalSubtitleOverride: BlockOverrides = {
+export const ValueProposalSubtitleOverride: BlockOverrides = {
     Block: {
         style: ({ $theme }) => ({
             color: $theme.colors.contentSecondary,
@@ -47,7 +47,7 @@ const ValueProposalSubtitleOverride: BlockOverrides = {
     },
 };
 
-const ValueProposalCTAOverride: ButtonOverrides = {
+export const ValueProposalCTAOverride: ButtonOverrides = {
     BaseButton: {
         style: ({ $theme }) => ({
             backgroundColor: $theme.colors.accent,
@@ -56,7 +56,7 @@ const ValueProposalCTAOverride: ButtonOverrides = {
     },
 };
 
-const ValueProposalImages = styled('div', ({ $theme }) => ({
+export const ValueProposalImages = styled('div', ({ $theme }) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(7, 1fr)',
     gridTemplateRows: 'repeat(7, 1fr)',
@@ -72,13 +72,13 @@ const ValueProposalImages = styled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalImageContainer1 = styled('div', {
+export const ValueProposalImageContainer1 = styled('div', {
     position: 'relative',
     gridRow: '1 / 7',
     gridColumn: '1 / 5',
 });
 
-const ValueProposalImageContainer2 = styled('div', {
+export const ValueProposalImageContainer2 = styled('div', {
     position: 'relative',
     gridRow: '2 / 8',
     gridColumn: '4 / 8',
@@ -87,13 +87,3 @@ const ValueProposalImageContainer2 = styled('div', {
 export const ValueProposalImage = styled(Image, ({ $theme }) => ({
     borderRadius: $theme.borders.radius300,
 }));
-
-export {
-    ValueProposalSection,
-    ValueProposalContent,
-    ValueProposalSubtitleOverride,
-    ValueProposalCTAOverride,
-    ValueProposalImages,
-    ValueProposalImageContainer1,
-    ValueProposalImageContainer2,
-};
