@@ -72,17 +72,17 @@ const ValueProposalImages = styled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalImageContainer1 = styled('div', ({ $theme }) => ({
+const ValueProposalImageContainer1 = styled('div', {
     position: 'relative',
     gridRow: '1 / 7',
     gridColumn: '1 / 5',
-}));
+});
 
-const ValueProposalImageContainer2 = styled('div', ({ $theme }) => ({
+const ValueProposalImageContainer2 = styled('div', {
     position: 'relative',
     gridRow: '2 / 8',
     gridColumn: '4 / 8',
-}));
+});
 
 export const ValueProposalImage = styled(Image, ({ $theme }) => ({
     borderRadius: $theme.borders.radius300,
