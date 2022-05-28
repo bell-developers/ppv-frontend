@@ -1,4 +1,4 @@
-import { styled } from 'baseui';
+import { styled, withStyle } from 'baseui';
 import { BlockOverrides } from 'baseui/block';
 import { ButtonOverrides } from 'baseui/button';
 import Image from 'next/image';
@@ -72,14 +72,20 @@ export const ValueProposalImages = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ValueProposalImageContainer1 = styled('div', {
+const ImageContainer = styled('div', {
     position: 'relative',
+    transition: 'transform .3s ease',
+    ':hover': {
+        transform: 'scale(1.1)',
+    },
+});
+
+export const ValueProposalImageContainer1 = withStyle(ImageContainer, {
     gridRow: '1 / 7',
     gridColumn: '1 / 5',
 });
 
-export const ValueProposalImageContainer2 = styled('div', {
-    position: 'relative',
+export const ValueProposalImageContainer2 = withStyle(ImageContainer, {
     gridRow: '2 / 8',
     gridColumn: '4 / 8',
 });
