@@ -8,7 +8,7 @@ export const BenefitsSection = styled('div', {
     minHeight: '100vh',
     width: '100%',
     maxWidth: '1250px',
-    fontSize: 'clamp(14px, 1.2vw, 24px)',
+    fontSize: 'clamp(13px, 1.2vw, 24px)',
 });
 
 export const BenefitsTitleContainer = styled('div', {

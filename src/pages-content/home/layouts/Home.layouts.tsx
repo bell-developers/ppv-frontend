@@ -33,7 +33,7 @@ const HomeHeaderOverrides = {
             zIndex: 1,
             paddingTop: '1em',
             paddingBottom: '1em',
-            fontSize: 'clamp(14px, 1.2vw, 24px)',
+            fontSize: 'clamp(13px, 1.2vw, 24px)',
         },
     },
 };
