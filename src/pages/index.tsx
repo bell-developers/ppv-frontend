@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import { ALIGN, HeaderNavigation, StyledNavigationList } from 'baseui/header-navigation';
 import {
     DisplayMedium,
     DisplaySmall,
@@ -18,11 +17,7 @@ import {
     ValueProposalSubtitleOverride,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 import { Button } from 'baseui/button';
-import {
-    CustomHomeLogo,
-    HomeBody,
-    HomeHeaderOverrides,
-} from 'pages-content/home/layouts/Home.layouts';
+import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
 import {
     BenefitContainer,
     BenefitContainerReversed,
@@ -33,20 +28,12 @@ import {
     BenefitsTitleContainer,
     BenefitsTitleOverride,
 } from 'pages-content/home/layouts/BenefitsSection.layouts';
+import Header from 'components/header/Header';
 
 const HomePage: NextPage = () => {
     return (
         <HomeBody>
-            {/* @ts-ignore */}
-            <HeaderNavigation overrides={HomeHeaderOverrides}>
-                <StyledNavigationList $align={ALIGN.left}>
-                    <CustomHomeLogo>
-                        <a href='/'>
-                            <LabelLarge>Logo</LabelLarge>
-                        </a>
-                    </CustomHomeLogo>
-                </StyledNavigationList>
-            </HeaderNavigation>
+            <Header />
             <ValueProposalSection>
                 <ValueProposalContent>
                     <DisplayMedium as='h1'>Ropa buena, bonita y barata</DisplayMedium>
