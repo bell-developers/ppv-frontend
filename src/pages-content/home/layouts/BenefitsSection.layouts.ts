@@ -65,7 +65,7 @@ export const BenefitContent = styled('div', {
 
 export const BenefitImage = styled('div', ({ $theme }) => ({
     width: '100%',
-    height: '16.25em',
+    aspectRatio: '1.3 / 1',
     background: $theme.colors.backgroundInverseSecondary,
     borderRadius: $theme.borders.radius300,
 }));
