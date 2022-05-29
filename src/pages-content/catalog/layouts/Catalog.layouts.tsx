@@ -1,4 +1,5 @@
-import { styled } from 'baseui';
+import { styled, useStyletron } from 'baseui';
+import { HeadingXSmall } from 'baseui/typography';
 
 export const CatalogBody = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -25,8 +26,50 @@ export const CatalogTitleContainer = styled('div', {
 export const CatalogProductsContainer = styled('div', {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(19.875em, 1fr))',
-    gridAutoRows: '50vh',
+    gridAutoRows: 'auto',
     gap: '2em',
     width: '100%',
-    backgroundColor: 'blue',
 });
+
+export const CatalogProduct = () => {
+    const [css, theme] = useStyletron();
+
+    return (
+        <div
+            className={css({
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'column',
+                gap: '0.5em',
+                width: '100%',
+                textAlign: 'center',
+            })}
+        >
+            <div
+                className={css({
+                    width: '100%',
+                    aspectRatio: '1 / 0.9',
+                    backgroundColor: theme.colors.contentSecondary,
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
+                })}
+            ></div>
+            <div>
+                <HeadingXSmall
+                    className={css({
+                        fontWeight: '400',
+                    })}
+                >
+                    Producto
+                </HeadingXSmall>
+                <HeadingXSmall
+                    className={css({
+                        color: theme.colors.contentSecondary,
+                        fontWeight: '400',
+                    })}
+                >
+                    1500$
+                </HeadingXSmall>
+            </div>
+        </div>
+    );
+};
