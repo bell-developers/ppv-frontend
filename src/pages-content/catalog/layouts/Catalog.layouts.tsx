@@ -15,3 +15,9 @@ export const CatalogBody = styled('div', ({ $theme }) => ({
         padding: '0 1em',
     },
 }));
+
+export const CatalogTitleContainer = styled('div', {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+});
