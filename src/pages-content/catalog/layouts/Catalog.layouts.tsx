@@ -5,9 +5,10 @@ export const CatalogBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    gap: '3.5em',
     maxWidth: '100vw',
     minHeight: '100vh',
-    padding: '0 10em',
+    padding: '0 10em 3.5em 10em',
     backgroundColor: $theme.colors.backgroundPrimary,
     [$theme.mediaQuery.medium]: {
         padding: '0 4em',
