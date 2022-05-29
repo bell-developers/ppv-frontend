@@ -3,6 +3,7 @@ import Header from 'components/header/Header';
 import { NextPage } from 'next';
 import {
     CatalogBody,
+    CatalogProductsContainer,
     CatalogTitleContainer,
 } from 'pages-content/catalog/layouts/Catalog.layouts';
 
@@ -13,6 +14,7 @@ const CatalogPage: NextPage = () => {
             <CatalogTitleContainer>
                 <DisplaySmall>Catálogo</DisplaySmall>
             </CatalogTitleContainer>
+            <CatalogProductsContainer></CatalogProductsContainer>
         </CatalogBody>
     );
 };

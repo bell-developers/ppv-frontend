@@ -21,3 +21,12 @@ export const CatalogTitleContainer = styled('div', {
     justifyContent: 'space-between',
     width: '100%',
 });
+
+export const CatalogProductsContainer = styled('div', {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(19.875em, 1fr))',
+    gridAutoRows: '50vh',
+    gap: '2em',
+    width: '100%',
+    backgroundColor: 'blue',
+});
