@@ -7,7 +7,6 @@ export const CatalogBody = styled('div', ({ $theme }) => ({
     alignItems: 'center',
     gap: '3.5em',
     maxWidth: '100vw',
-    minHeight: '100vh',
     padding: '0 10em 3.5em 10em',
     backgroundColor: $theme.colors.backgroundPrimary,
     [$theme.mediaQuery.medium]: {
@@ -22,6 +21,7 @@ export const CatalogTitleContainer = styled('div', {
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%',
+    maxWidth: '1250px',
 });
 
 export const CatalogProductsContainer = styled('div', {
@@ -30,6 +30,7 @@ export const CatalogProductsContainer = styled('div', {
     gridAutoRows: 'auto',
     gap: '2em',
     width: '100%',
+    maxWidth: '1250px',
 });
 
 export const CatalogProduct = () => {
