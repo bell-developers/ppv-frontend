@@ -20,6 +20,8 @@ const CatalogPage: NextPage = () => {
                 <CatalogProduct></CatalogProduct>
                 <CatalogProduct></CatalogProduct>
                 <CatalogProduct></CatalogProduct>
+                <CatalogProduct></CatalogProduct>
+                <CatalogProduct></CatalogProduct>
             </CatalogProductsContainer>
         </CatalogBody>
     );
