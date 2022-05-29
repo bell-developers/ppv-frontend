@@ -37,4 +37,5 @@ export const HeaderNavigationOverrides = {
 
 export const CustomHomeLogo = withStyle(StyledNavigationItem, {
     paddingLeft: 0,
+    cursor: 'pointer',
 });
