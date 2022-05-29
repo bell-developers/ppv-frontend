@@ -1,7 +1,7 @@
 import { StyledNavigationList, ALIGN, HeaderNavigation } from 'baseui/header-navigation';
 import { LabelLarge } from 'baseui/typography';
 import Link from 'next/link';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { CustomHomeLogo, HeaderNavigationOverrides } from './Header.styles';
 
 const Header = () => (
