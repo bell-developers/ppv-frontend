@@ -6,7 +6,9 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "test": "jest",
+        "test-watch": "jest --watch"
     },
     "dependencies": {
         "axios": "^0.27.2",
@@ -18,12 +20,16 @@
         "styletron-react": "^6.0.2"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.3.0",
         "@types/node": "17.0.32",
         "@types/react": "18.0.9",
         "@types/styletron-engine-atomic": "^1.1.1",
         "@types/styletron-react": "^5.0.3",
         "@types/styletron-standard": "^2.0.2",
         "eslint": "8.15.0",
-        "eslint-config-next": "12.1.6"
+        "eslint-config-next": "12.1.6",
+        "jest": "^28.1.0",
+        "jest-environment-jsdom": "^28.1.0"
     }
 }
