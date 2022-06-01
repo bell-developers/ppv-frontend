@@ -1,9 +1,9 @@
 import { DisplaySmall } from 'baseui/typography';
 import Header from 'components/header/Header';
 import { NextPage } from 'next';
+import { CatalogProduct } from 'pages-content/catalog/components/CatalogProduct.component';
 import {
     CatalogBody,
-    CatalogProduct,
     CatalogProductsContainer,
     CatalogTitleContainer,
 } from 'pages-content/catalog/layouts/Catalog.layouts';
@@ -16,12 +16,14 @@ const CatalogPage: NextPage = () => {
                 <DisplaySmall>Catálogo</DisplaySmall>
             </CatalogTitleContainer>
             <CatalogProductsContainer>
-                <CatalogProduct></CatalogProduct>
-                <CatalogProduct></CatalogProduct>
-                <CatalogProduct></CatalogProduct>
-                <CatalogProduct></CatalogProduct>
-                <CatalogProduct></CatalogProduct>
-                <CatalogProduct></CatalogProduct>
+                <CatalogProduct
+                    productData={{
+                        name: 'Pantalón Jean',
+                        price: 3999.99,
+                        images: [],
+                        sizes: [],
+                    }}
+                ></CatalogProduct>
             </CatalogProductsContainer>
         </CatalogBody>
     );

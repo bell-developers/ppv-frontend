@@ -1,5 +1,7 @@
 import { styled, useStyletron } from 'baseui';
 import { HeadingXSmall } from 'baseui/typography';
+import { Product } from 'models/Product.model';
+import { FC } from 'react';
 
 export const CatalogBody = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -31,7 +33,7 @@ export const CatalogTitleContainer = styled('div', ({ $theme }) => ({
 
 export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
     gridAutoRows: 'auto',
     gap: '2em',
     width: '100%',
@@ -44,46 +46,3 @@ export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
         padding: '0 1em',
     },
 }));
-
-export const CatalogProduct = () => {
-    const [css, theme] = useStyletron();
-
-    return (
-        <div
-            className={css({
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: 'column',
-                gap: '0.5em',
-                width: '100%',
-                textAlign: 'center',
-            })}
-        >
-            <div
-                className={css({
-                    width: '100%',
-                    aspectRatio: '1 / 0.9',
-                    backgroundColor: theme.colors.contentSecondary,
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
-                })}
-            ></div>
-            <div>
-                <HeadingXSmall
-                    className={css({
-                        fontWeight: '400',
-                    })}
-                >
-                    Producto
-                </HeadingXSmall>
-                <HeadingXSmall
-                    className={css({
-                        color: theme.colors.contentSecondary,
-                        fontWeight: '400',
-                    })}
-                >
-                    1500$
-                </HeadingXSmall>
-            </div>
-        </div>
-    );
-};
