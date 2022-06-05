@@ -2,6 +2,7 @@ import { HeadingXSmall } from 'baseui/typography';
 import { Product } from 'models/Product.model';
 import { FC } from 'react';
 import { useStyletron } from 'baseui';
+import Image from 'next/image';
 
 type CatalogProductProps = {
     productData: Product;
@@ -29,7 +30,12 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                     aspectRatio: '1 / 0.9',
                     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
                 })}
-            ></div>
+            >
+                <Image
+                    src={'data:image/jpg;base64,' + productData.images[0].slice(2, -1)}
+                    layout='fill'
+                />
+            </div>
             <div>
                 <HeadingXSmall
                     className={css({
