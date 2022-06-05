@@ -1,14 +1,23 @@
+import { adaptCatalog } from 'adapters/adaptCatalog';
 import { DisplaySmall } from 'baseui/typography';
 import Header from 'components/header/Header';
-import { NextPage } from 'next';
+import { Product } from 'models/Product.model';
+import { GetServerSideProps, NextPage } from 'next';
 import { CatalogProduct } from 'pages-content/catalog/components/CatalogProduct.component';
 import {
     CatalogBody,
     CatalogProductsContainer,
     CatalogTitleContainer,
 } from 'pages-content/catalog/layouts/Catalog.layouts';
+import { getCatalog } from 'services/get/getCatalog';
 
-const CatalogPage: NextPage = () => {
+type CatalogPageProps = {
+    productsData: Product[];
+};
+
+const CatalogPage: NextPage<CatalogPageProps> = props => {
+    const { productsData } = props;
+
     return (
         <CatalogBody>
             <Header />
@@ -16,17 +25,22 @@ const CatalogPage: NextPage = () => {
                 <DisplaySmall>Catálogo</DisplaySmall>
             </CatalogTitleContainer>
             <CatalogProductsContainer>
-                <CatalogProduct
-                    productData={{
-                        name: 'Pantalón Jean',
-                        price: 3999.99,
-                        images: [],
-                        sizes: [],
-                    }}
-                ></CatalogProduct>
+                {productsData.map(productData => (
+                    <CatalogProduct key={productData.id} productData={productData} />
+                ))}
             </CatalogProductsContainer>
         </CatalogBody>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+    const productsData = adaptCatalog(await getCatalog());
+
+    return {
+        props: {
+            productsData,
+        },
+    };
 };
 
 export default CatalogPage;
