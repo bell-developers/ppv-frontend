@@ -51,6 +51,7 @@ const HomePage: NextPage = () => {
                             src='/girl1.jpg'
                             alt='Product Image 1'
                             layout='fill'
+                            priority={true}
                         />
                     </ValueProposalImageContainer1>
                     <ValueProposalImageContainer2>
@@ -58,6 +59,7 @@ const HomePage: NextPage = () => {
                             src='/girl2.jpg'
                             alt='Product Image 2'
                             layout='fill'
+                            priority={true}
                         />
                     </ValueProposalImageContainer2>
                 </ValueProposalImages>
