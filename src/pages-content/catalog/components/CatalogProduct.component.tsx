@@ -31,10 +31,7 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
                 })}
             >
-                <Image
-                    src={'data:image/jpg;base64,' + productData.images[0].slice(2, -1)}
-                    layout='fill'
-                />
+                <Image src={productData.images[0]} layout='fill' />
             </div>
             <div>
                 <HeadingXSmall
