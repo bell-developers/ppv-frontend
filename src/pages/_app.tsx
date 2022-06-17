@@ -1,11 +1,10 @@
 import type { AppProps } from 'next/app';
 import 'styles/reset.css';
 import { Provider } from 'styletron-react';
-import { Client, Server } from 'styletron-engine-atomic';
+import { Client, hydrateType, Server } from 'styletron-engine-atomic';
 import { BaseProvider } from 'baseui';
 import { CustomTheme } from 'styles/CustomTheme';
-
-const styletron = typeof window === 'undefined' ? new Server() : new Client();
+import { styletron } from 'utils/styletron';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (

@@ -30,16 +30,22 @@ import {
     BenefitsTitleOverride,
 } from 'pages-content/home/layouts/BenefitsSection.layouts';
 import Header from 'components/header/Header';
+import Head from 'next/head';
 
 const HomePage: NextPage = () => {
     return (
         <HomeBody>
+            <Head>
+                <title>Inicio - PPV</title>
+            </Head>
             <Header />
             <ValueProposalSection>
                 <ValueProposalContent>
-                    <DisplayMedium as='h1'>Ropa buena, bonita y barata</DisplayMedium>
+                    <DisplayMedium as='h1'>
+                        La ropa que siempre deseaste comprar
+                    </DisplayMedium>
                     <HeadingXSmall as='h2' overrides={ValueProposalSubtitleOverride}>
-                        Llevá tu estilo al siguiente nivel con nuestras prendas
+                        En nuestra tienda encontrarás las prendas perfectas para vos
                     </HeadingXSmall>
                     <Button $as='a' href='/catalogo' overrides={ValueProposalCTAOverride}>
                         Ver catálogo

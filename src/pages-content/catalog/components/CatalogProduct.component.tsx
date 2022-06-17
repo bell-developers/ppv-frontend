@@ -27,11 +27,17 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                 className={css({
                     position: 'relative',
                     width: '100%',
-                    aspectRatio: '1 / 0.9',
+                    aspectRatio: '1 / 1',
                     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
                 })}
             >
-                <Image src={productData.images[0]} layout='fill' />
+                <Image
+                    src={productData.images[0]}
+                    layout='fill'
+                    className={css({
+                        objectFit: 'cover',
+                    })}
+                />
             </div>
             <div>
                 <HeadingXSmall

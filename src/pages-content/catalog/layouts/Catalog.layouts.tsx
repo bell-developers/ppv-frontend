@@ -1,7 +1,5 @@
-import { styled, useStyletron } from 'baseui';
-import { HeadingXSmall } from 'baseui/typography';
-import { Product } from 'models/Product.model';
-import { FC } from 'react';
+import { styled, withStyle } from 'baseui';
+import { Spinner } from 'baseui/spinner';
 
 export const CatalogBody = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -45,4 +43,16 @@ export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
     [$theme.mediaQuery.small]: {
         padding: '0 1em',
     },
+}));
+
+export const CatalogSpinner = withStyle(Spinner, ({ $theme }) => ({
+    position: 'absolute',
+    top: '50%',
+    left: '0',
+    right: '0',
+    transform: 'translateY(-50%)',
+    margin: '0 auto',
+    borderTopColor: $theme.colors.primary,
+    width: '4em',
+    height: '4em',
 }));
