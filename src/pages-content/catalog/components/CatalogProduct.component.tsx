@@ -28,15 +28,19 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                     position: 'relative',
                     width: '100%',
                     aspectRatio: '1 / 1',
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.06)',
+                    borderRadius: '.5em',
+                    ...theme.borders.border200,
                 })}
             >
                 <Image
                     src={productData.images[0]}
                     layout='fill'
                     className={css({
+                        borderRadius: '.5em',
                         objectFit: 'cover',
                     })}
+                    alt={productData.name}
                 />
             </div>
             <div>
