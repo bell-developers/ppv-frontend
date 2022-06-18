@@ -8,6 +8,7 @@ class MyDocument extends Document {
     static async getInitialProps(context: DocumentContext) {
         const renderPage = () =>
             context.renderPage({
+                // eslint-disable-next-line react/display-name
                 enhanceApp: App => props =>
                     (
                         <StyletronProvider value={styletron}>
