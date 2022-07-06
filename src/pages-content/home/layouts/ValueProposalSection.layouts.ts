@@ -23,6 +23,7 @@ export const ValueProposalSection = styled('div', ({ $theme }) => ({
         height: '85vh',
     },
     [$theme.mediaQuery.small]: {
+        minHeight: '700px',
         gap: '2em',
     },
 }));
