@@ -3,7 +3,6 @@ import {
     DisplayMedium,
     DisplaySmall,
     HeadingXSmall,
-    LabelLarge,
     HeadingXLarge,
     ParagraphLarge,
 } from 'baseui/typography';
@@ -25,7 +24,6 @@ import {
     BenefitContent,
     BenefitImageContainer,
     BenefitsSection,
-    BenefitsSubtitleOverride,
     BenefitsTitleContainer,
     BenefitsTitleOverride,
 } from 'pages-content/home/layouts/BenefitsSection.layouts';
@@ -100,7 +98,7 @@ const HomePage: NextPage = () => {
                             Utilizá la forma de pago que más te guste
                         </HeadingXLarge>
                         <ParagraphLarge>
-                            Ofrecemos varias formas de pago para que elijas el que mas te
+                            Ofrecemos varias formas de pago para que elijas la que mas te
                             convenga.
                         </ParagraphLarge>
                     </BenefitContent>

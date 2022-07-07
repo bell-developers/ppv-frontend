@@ -28,7 +28,7 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                     position: 'relative',
                     width: '100%',
                     aspectRatio: '1 / 1',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.06)',
+                    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.06)',
                     borderRadius: '.5em',
                     ...theme.borders.border200,
                 })}
