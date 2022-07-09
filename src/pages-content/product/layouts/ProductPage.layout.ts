@@ -5,3 +5,9 @@ export const ProductPageBody = styled('div', {
     maxWidth: '100vw',
     minHeight: '100vh',
 });
+
+export const ProductContainer = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.5em',
+});
