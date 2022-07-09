@@ -29,5 +29,12 @@ export const ProductContentContainer = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    gap: '1em',
+    gap: '1.5em',
+}));
+
+export const ProductSizesContainer = styled('div', () => ({
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    gap: '0.25em',
 }));

@@ -1,4 +1,4 @@
-import { DisplaySmall } from 'baseui/typography';
+import { DisplaySmall, LabelMedium } from 'baseui/typography';
 import Header from 'components/header/Header';
 import { useRouter } from 'next/router';
 import {
@@ -6,6 +6,7 @@ import {
     ProductContentContainer,
     ProductImageContainer,
     ProductPageBody,
+    ProductSizesContainer,
 } from 'pages-content/product/layouts/ProductPage.layout';
 
 function ProductPage() {
@@ -18,6 +19,9 @@ function ProductPage() {
                 <ProductImageContainer></ProductImageContainer>
                 <ProductContentContainer>
                     <DisplaySmall>Buzo con capucha</DisplaySmall>
+                    <ProductSizesContainer>
+                        <LabelMedium>Talles</LabelMedium>
+                    </ProductSizesContainer>
                 </ProductContentContainer>
             </ProductContainer>
         </ProductPageBody>
