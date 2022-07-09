@@ -56,3 +56,17 @@ export const CatalogSpinner = withStyle(Spinner, ({ $theme }) => ({
     width: '4em',
     height: '4em',
 }));
+
+export const CatalogErrorContainer = styled('div', () => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1em',
+    textAlign: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '0',
+    right: '0',
+    transform: 'translateY(-50%)',
+    margin: '0 auto',
+}));

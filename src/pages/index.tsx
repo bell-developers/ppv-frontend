@@ -3,7 +3,6 @@ import {
     DisplayMedium,
     DisplaySmall,
     HeadingXSmall,
-    LabelLarge,
     HeadingXLarge,
     ParagraphLarge,
 } from 'baseui/typography';
@@ -23,14 +22,14 @@ import {
     BenefitContainer,
     BenefitContainerReversed,
     BenefitContent,
-    BenefitImage,
+    BenefitImageContainer,
     BenefitsSection,
-    BenefitsSubtitleOverride,
     BenefitsTitleContainer,
     BenefitsTitleOverride,
 } from 'pages-content/home/layouts/BenefitsSection.layouts';
 import Header from 'components/header/Header';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const HomePage: NextPage = () => {
     return (
@@ -73,33 +72,44 @@ const HomePage: NextPage = () => {
             <BenefitsSection>
                 <BenefitsTitleContainer>
                     <DisplaySmall as='h3' overrides={BenefitsTitleOverride}>
-                        Beneficios
+                        ¡Animate a comprar por internet!
                     </DisplaySmall>
-                    <LabelLarge overrides={BenefitsSubtitleOverride}>
-                        Dignissim eget proin suspendisse magna maecenas iaculis duis id.
-                    </LabelLarge>
                 </BenefitsTitleContainer>
                 <BenefitContainer>
                     <BenefitContent>
-                        <HeadingXLarge as='h4'>Beneficio 1</HeadingXLarge>
+                        <HeadingXLarge as='h4'>Comprá desde tu casa</HeadingXLarge>
                         <ParagraphLarge>
-                            Posuere euismod aliquet ipsum dolor aliquet tellus mauris.
-                            Egestas in dignissim nunc, nisi, in lacus a nascetur
-                            adipiscing.
+                            Ya no es necesario venir a nuestra tienda, podés hacerlo desde
+                            la comodidad de tu hogar.
                         </ParagraphLarge>
                     </BenefitContent>
-                    <BenefitImage />
+                    <BenefitImageContainer>
+                        <Image
+                            src='/sofa.jpg'
+                            layout='fill'
+                            alt='Comprá desde tu casa'
+                            style={{ borderRadius: '8px' }}
+                        />
+                    </BenefitImageContainer>
                 </BenefitContainer>
                 <BenefitContainerReversed>
                     <BenefitContent>
-                        <HeadingXLarge as='h4'>Beneficio 2</HeadingXLarge>
+                        <HeadingXLarge as='h4'>
+                            Utilizá la forma de pago que más te guste
+                        </HeadingXLarge>
                         <ParagraphLarge>
-                            Posuere euismod aliquet ipsum dolor aliquet tellus mauris.
-                            Egestas in dignissim nunc, nisi, in lacus a nascetur
-                            adipiscing.
+                            Ofrecemos varias formas de pago para que elijas la que más te
+                            convenga.
                         </ParagraphLarge>
                     </BenefitContent>
-                    <BenefitImage />
+                    <BenefitImageContainer>
+                        <Image
+                            src='/pay.jpg'
+                            layout='fill'
+                            alt='Utilizá la forma de pago que más te guste'
+                            style={{ borderRadius: '8px' }}
+                        />
+                    </BenefitImageContainer>
                 </BenefitContainerReversed>
             </BenefitsSection>
         </HomeBody>
