@@ -98,7 +98,7 @@ const HomePage: NextPage = () => {
                             Utilizá la forma de pago que más te guste
                         </HeadingXLarge>
                         <ParagraphLarge>
-                            Ofrecemos varias formas de pago para que elijas la que mas te
+                            Ofrecemos varias formas de pago para que elijas la que más te
                             convenga.
                         </ParagraphLarge>
                     </BenefitContent>
