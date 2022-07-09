@@ -6,11 +6,14 @@ import {
     ProductContentContainer,
     ProductImageContainer,
     ProductPageBody,
+    ProductSize,
     ProductSizesContainer,
+    ProductSizesSection,
 } from 'pages-content/product/layouts/ProductPage.layout';
 
 function ProductPage() {
     const { query } = useRouter();
+    const sizes = ['S', 'M', 'L'];
 
     return (
         <ProductPageBody>
@@ -19,9 +22,14 @@ function ProductPage() {
                 <ProductImageContainer></ProductImageContainer>
                 <ProductContentContainer>
                     <DisplaySmall>Buzo con capucha</DisplaySmall>
-                    <ProductSizesContainer>
+                    <ProductSizesSection>
                         <LabelMedium>Talles</LabelMedium>
-                    </ProductSizesContainer>
+                        <ProductSizesContainer>
+                            {sizes.map(size => (
+                                <ProductSize key={size}>{size}</ProductSize>
+                            ))}
+                        </ProductSizesContainer>
+                    </ProductSizesSection>
                 </ProductContentContainer>
             </ProductContainer>
         </ProductPageBody>

@@ -32,9 +32,26 @@ export const ProductContentContainer = styled('div', () => ({
     gap: '1.5em',
 }));
 
-export const ProductSizesContainer = styled('div', () => ({
+export const ProductSizesSection = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    gap: '0.25em',
+    gap: '0.5em',
+}));
+
+export const ProductSizesContainer = styled('div', () => ({
+    display: 'flex',
+    width: '100%',
+    gap: '.75em',
+}));
+
+export const ProductSize = styled('div', ({ $theme }) => ({
+    display: 'flex',
+    placeContent: 'center',
+    placeItems: 'center',
+    width: '2.5em',
+    height: '2.5em',
+    backgroundColor: $theme.colors.backgroundTertiary,
+    borderRadius: $theme.borders.radius300,
+    fontFamily: 'Poppins, sans-serif',
 }));
