@@ -2,6 +2,7 @@ import Header from 'components/header/Header';
 import { useRouter } from 'next/router';
 import {
     ProductContainer,
+    ProductImageContainer,
     ProductPageBody,
 } from 'pages-content/product/layouts/ProductPage.layout';
 
@@ -11,7 +12,9 @@ function ProductPage() {
     return (
         <ProductPageBody>
             <Header />
-            <ProductContainer></ProductContainer>
+            <ProductContainer>
+                <ProductImageContainer></ProductImageContainer>
+            </ProductContainer>
         </ProductPageBody>
     );
 }
