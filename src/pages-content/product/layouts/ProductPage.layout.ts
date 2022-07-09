@@ -28,7 +28,6 @@ export const ProductImageContainer = styled('div', ({ $theme }) => ({
 export const ProductContentContainer = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: 'blue',
     width: '100%',
     gap: '1em',
 }));
