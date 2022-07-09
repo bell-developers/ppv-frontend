@@ -24,3 +24,11 @@ export const ProductImageContainer = styled('div', ({ $theme }) => ({
     borderRadius: $theme.borders.radius300,
     boxShadow: '0px 4px 16px 0px #0000001F',
 }));
+
+export const ProductContentContainer = styled('div', () => ({
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: 'blue',
+    width: '100%',
+    gap: '1em',
+}));
