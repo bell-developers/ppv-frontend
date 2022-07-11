@@ -1,9 +1,6 @@
 import { styled, withStyle } from 'baseui';
-import { BlockOverrides } from 'baseui/block';
-import { Button, ButtonOverrides } from 'baseui/button';
 import { HeadingXSmall } from 'baseui/typography';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
