@@ -1,4 +1,4 @@
-import { createDarkTheme } from 'baseui';
+import { createDarkTheme, createTheme } from 'baseui';
 
 const primitives = {
     primaryFontFamily: 'Poppins',
@@ -14,11 +14,11 @@ const overrides = {
         DisplayMedium: {
             fontSize: '3.25em',
             fontWeight: '600',
-            lineHeight: '1.1em',
+            lineHeight: '1.23em',
         },
         DisplaySmall: {
             fontSize: '2.75em',
-            lineHeight: '1.1em',
+            lineHeight: '1.18em',
         },
         HeadingXSmall: {
             fontSize: '1.25em',
@@ -26,15 +26,15 @@ const overrides = {
         },
         LabelLarge: {
             fontSize: '1.125em',
-            lineHeight: '1.1em',
+            lineHeight: '1.33em',
         },
         HeadingXLarge: {
             fontSize: '2.25em',
-            lineHeight: '1.1em',
+            lineHeight: '1.22em',
         },
         ParagraphLarge: {
             fontSize: '1.125em',
-            lineHeight: '1.3em',
+            lineHeight: '1.55em',
         },
     },
 };
