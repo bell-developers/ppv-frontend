@@ -41,8 +41,7 @@ export const BenefitContainer = styled('div', ({ $theme }) => ({
     justifyContent: 'center',
     gap: '6.5em',
     padding: '5em 6.5em',
-    backgroundColor: $theme.colors.backgroundPrimary,
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)',
+    backgroundColor: $theme.colors.backgroundSecondary,
     [$theme.mediaQuery.medium]: {
         padding: '3vh 6vw',
         gap: '5vw',
