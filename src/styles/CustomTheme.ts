@@ -1,4 +1,4 @@
-import { Theme, createTheme } from 'baseui';
+import { createDarkTheme } from 'baseui';
 
 const primitives = {
     primaryFontFamily: 'Poppins',
@@ -39,4 +39,5 @@ const overrides = {
     },
 };
 
-export const CustomTheme = createTheme(primitives, overrides);
+// export const CustomTheme = createTheme(primitives, overrides);
+export const CustomTheme = createDarkTheme(primitives, overrides);
