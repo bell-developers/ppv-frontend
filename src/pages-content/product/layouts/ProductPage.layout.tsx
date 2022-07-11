@@ -1,4 +1,6 @@
-import { styled } from 'baseui';
+import { styled, withStyle } from 'baseui';
+import { Button } from 'baseui/button';
+import { HeadingXSmall } from 'baseui/typography';
 
 export const ProductPageBody = styled('div', {
     display: 'flex',
@@ -55,3 +57,18 @@ export const ProductSize = styled('div', ({ $theme }) => ({
     borderRadius: $theme.borders.radius300,
     fontFamily: 'Poppins, sans-serif',
 }));
+
+export const ProductPriceContainer = styled('div', () => ({
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: 'auto auto',
+    gap: '0.5em',
+}));
+
+export const ProductPrice = styled(HeadingXSmall, {
+    justifySelf: 'flex-end',
+});
+
+export const ProductCTA = styled(Button, {
+    gridColumn: '1 / 3',
+});
