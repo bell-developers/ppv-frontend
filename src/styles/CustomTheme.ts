@@ -1,10 +1,15 @@
-import { createDarkTheme, createTheme } from 'baseui';
+import { createDarkTheme, DarkTheme } from 'baseui';
 
 const primitives = {
     primaryFontFamily: 'Poppins',
 };
 
 const overrides = {
+    colors: {
+        buttonPrimaryFill: DarkTheme.colors.accent,
+        buttonPrimaryText: DarkTheme.colors.contentPrimary,
+        buttonPrimaryHover: DarkTheme.colors.accent500,
+    },
     mediaQuery: {
         small: '@media screen and (max-width: 480px)',
         medium: '@media screen and (max-width: 960px)',
