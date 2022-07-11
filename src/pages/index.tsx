@@ -14,7 +14,6 @@ import {
     ValueProposalImageContainer1,
     ValueProposalImageContainer2,
     ValueProposalImage,
-    ValueProposalCTA,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
 import {
@@ -47,9 +46,9 @@ const HomePage: NextPage = () => {
                     <HeadingXSmall as='h2' overrides={ValueProposalSubtitleOverride}>
                         En nuestra tienda encontrarás las prendas perfectas para vos
                     </HeadingXSmall>
-                    <Button $as='a' href='/catalogo' $style={{ width: '7em' }}>
-                        Ver catálogo
-                    </Button>
+                    <Link href='/catalogo'>
+                        <Button $style={{ width: '10em' }}>Ver catálogo</Button>
+                    </Link>
                 </ValueProposalContent>
                 <ValueProposalImages>
                     <ValueProposalImageContainer1>
