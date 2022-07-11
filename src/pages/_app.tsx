@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import 'styles/reset.css';
 import { Provider } from 'styletron-react';
-import { Client, hydrateType, Server } from 'styletron-engine-atomic';
 import { BaseProvider } from 'baseui';
 import { CustomTheme } from 'styles/CustomTheme';
 import { styletron } from 'utils/styletron';

@@ -13,7 +13,7 @@ import Head from 'next/head';
 import { useLoadCatalog } from 'pages-content/catalog/hooks/useLoadCatalog';
 import { Alert } from 'baseui/icon';
 
-const CatalogPage: NextPage = props => {
+const CatalogPage: NextPage = () => {
     const { loading, productsData, error } = useLoadCatalog();
 
     return (

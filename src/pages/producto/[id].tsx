@@ -1,7 +1,5 @@
-import { Button } from 'baseui/button';
 import { DisplaySmall, HeadingXSmall, LabelMedium } from 'baseui/typography';
 import Header from 'components/header/Header';
-import { useRouter } from 'next/router';
 import {
     ProductContainer,
     ProductContentContainer,
@@ -16,7 +14,6 @@ import {
 } from 'pages-content/product/layouts/ProductPage.layout';
 
 function ProductPage() {
-    const { query } = useRouter();
     const sizes = ['S', 'M', 'L'];
 
     return (
