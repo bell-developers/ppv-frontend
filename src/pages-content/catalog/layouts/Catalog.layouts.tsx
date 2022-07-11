@@ -1,4 +1,5 @@
 import { styled, withStyle } from 'baseui';
+import { Icon } from 'baseui/icon';
 import { Spinner } from 'baseui/spinner';
 
 export const CatalogBody = styled('div', ({ $theme }) => ({
@@ -7,6 +8,7 @@ export const CatalogBody = styled('div', ({ $theme }) => ({
     alignItems: 'center',
     gap: '3.5em',
     maxWidth: '100vw',
+    minHeight: '100vh',
     padding: '0 10em 3.5em 10em',
     fontSize: 'clamp(16px, 1.2vw, 24px)',
     backgroundColor: $theme.colors.backgroundPrimary,
@@ -24,6 +26,7 @@ export const CatalogTitleContainer = styled('div', ({ $theme }) => ({
     justifyContent: 'space-between',
     width: '100%',
     maxWidth: '1250px',
+    color: $theme.colors.contentPrimary,
     [$theme.mediaQuery.small]: {
         justifyContent: 'center',
     },

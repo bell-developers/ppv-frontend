@@ -12,9 +12,11 @@ import {
 import Head from 'next/head';
 import { useLoadCatalog } from 'pages-content/catalog/hooks/useLoadCatalog';
 import { Alert } from 'baseui/icon';
+import { useStyletron } from 'baseui';
 
 const CatalogPage: NextPage = () => {
     const { loading, productsData, error } = useLoadCatalog();
+    const [, theme] = useStyletron();
 
     return (
         <CatalogBody>
@@ -28,7 +30,7 @@ const CatalogPage: NextPage = () => {
             <CatalogProductsContainer>
                 {error === true && (
                     <CatalogErrorContainer>
-                        <Alert size={64} />
+                        <Alert color={theme.colors.negative} size={64} />
                         <LabelLarge>
                             Ha ocurrido un error. <br /> Por favor, recarge la página.
                         </LabelLarge>
