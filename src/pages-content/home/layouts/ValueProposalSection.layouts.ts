@@ -1,6 +1,7 @@
 import { styled, withStyle } from 'baseui';
 import { BlockOverrides } from 'baseui/block';
 import { Button, ButtonOverrides } from 'baseui/button';
+import { HeadingXSmall } from 'baseui/typography';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -39,15 +40,11 @@ export const ValueProposalContent = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ValueProposalSubtitleOverride: BlockOverrides = {
-    Block: {
-        style: ({ $theme }) => ({
-            color: $theme.colors.contentSecondary,
-            fontWeight: '400',
-            width: '80%',
-        }),
-    },
-};
+export const ValueProposalSubtitle = styled(HeadingXSmall, ({ $theme }) => ({
+    color: $theme.colors.contentSecondary,
+    fontWeight: '400',
+    width: '80%',
+}));
 
 export const ValueProposalImages = styled('div', ({ $theme }) => ({
     display: 'grid',

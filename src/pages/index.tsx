@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import {
     DisplayMedium,
     DisplaySmall,
-    HeadingXSmall,
     HeadingXLarge,
     ParagraphLarge,
 } from 'baseui/typography';
@@ -10,10 +9,10 @@ import {
     ValueProposalContent,
     ValueProposalImages,
     ValueProposalSection,
-    ValueProposalSubtitleOverride,
     ValueProposalImageContainer1,
     ValueProposalImageContainer2,
     ValueProposalImage,
+    ValueProposalSubtitle,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
 import {
@@ -43,9 +42,9 @@ const HomePage: NextPage = () => {
                     <DisplayMedium as='h1'>
                         La ropa que siempre deseaste comprar
                     </DisplayMedium>
-                    <HeadingXSmall as='h2' overrides={ValueProposalSubtitleOverride}>
+                    <ValueProposalSubtitle>
                         En nuestra tienda encontrarás las prendas perfectas para vos
-                    </HeadingXSmall>
+                    </ValueProposalSubtitle>
                     <Link href='/catalogo'>
                         <Button $style={{ width: '10em' }}>Ver catálogo</Button>
                     </Link>
