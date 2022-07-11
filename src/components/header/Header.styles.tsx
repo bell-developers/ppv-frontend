@@ -37,7 +37,8 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => (
     },
 }));
 
-export const CustomHomeLogo = withStyle(StyledNavigationItem, {
+export const CustomHomeLogo = withStyle(StyledNavigationItem, ({ $theme }) => ({
     paddingLeft: 0,
     cursor: 'pointer',
-});
+    color: $theme.colors.contentPrimary,
+}));
