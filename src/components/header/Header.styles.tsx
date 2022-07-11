@@ -7,7 +7,7 @@ export const HeaderNavigationOverrides = {
     },
 };
 
-export const StyledHeaderNavigation = styled(HeaderNavigation, {
+export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => ({
     position: 'sticky',
     top: '0',
     left: '0',
@@ -17,7 +17,7 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, {
     borderBottomWidth: 'none',
     borderBottomStyle: 'none',
     borderBottomColor: 'none',
-    backgroundColor: 'transparent',
+    backgroundColor: $theme.colors.backgroundPrimary,
     zIndex: 1,
     paddingTop: '1em',
     paddingBottom: '1em',
@@ -29,13 +29,13 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, {
         left: '0',
         right: '0',
         width: '100%',
-        backgroundColor: 'rgb(255, 255, 255, 0.99)',
+        backgroundColor: $theme.colors.backgroundPrimary,
         paddingTop: '1em',
         zIndex: '-1',
         paddingBottom: '1em',
         height: '1.1em',
     },
-});
+}));
 
 export const CustomHomeLogo = withStyle(StyledNavigationItem, {
     paddingLeft: 0,
