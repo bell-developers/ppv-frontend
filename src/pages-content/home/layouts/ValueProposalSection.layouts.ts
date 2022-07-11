@@ -1,7 +1,8 @@
 import { styled, withStyle } from 'baseui';
 import { BlockOverrides } from 'baseui/block';
-import { ButtonOverrides } from 'baseui/button';
+import { Button, ButtonOverrides } from 'baseui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const ValueProposalSection = styled('div', ({ $theme }) => ({
     display: 'flex',
@@ -44,15 +45,6 @@ export const ValueProposalSubtitleOverride: BlockOverrides = {
             color: $theme.colors.contentSecondary,
             fontWeight: '400',
             width: '80%',
-        }),
-    },
-};
-
-export const ValueProposalCTAOverride: ButtonOverrides = {
-    BaseButton: {
-        style: ({ $theme }) => ({
-            backgroundColor: $theme.colors.accent,
-            width: '7em',
         }),
     },
 };

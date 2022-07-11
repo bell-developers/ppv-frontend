@@ -8,15 +8,14 @@ import {
 } from 'baseui/typography';
 import {
     ValueProposalContent,
-    ValueProposalCTAOverride,
     ValueProposalImages,
     ValueProposalSection,
     ValueProposalSubtitleOverride,
     ValueProposalImageContainer1,
     ValueProposalImageContainer2,
     ValueProposalImage,
+    ValueProposalCTA,
 } from 'pages-content/home/layouts/ValueProposalSection.layouts';
-import { Button } from 'baseui/button';
 import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
 import {
     BenefitContainer,
@@ -30,6 +29,8 @@ import {
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from 'baseui/button';
 
 const HomePage: NextPage = () => {
     return (
@@ -46,7 +47,7 @@ const HomePage: NextPage = () => {
                     <HeadingXSmall as='h2' overrides={ValueProposalSubtitleOverride}>
                         En nuestra tienda encontrarás las prendas perfectas para vos
                     </HeadingXSmall>
-                    <Button $as='a' href='/catalogo' overrides={ValueProposalCTAOverride}>
+                    <Button $as='a' href='/catalogo' $style={{ width: '7em' }}>
                         Ver catálogo
                     </Button>
                 </ValueProposalContent>
