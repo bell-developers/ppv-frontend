@@ -1,10 +1,9 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { Key } from 'react';
-import { Server } from 'styletron-engine-atomic';
+import { Server, Sheet } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { styletron } from 'utils/styletron';
 
-class MyDocument extends Document {
+class MyDocument extends Document<{ stylesheets: Sheet[] }> {
     static async getInitialProps(context: DocumentContext) {
         const renderPage = () =>
             context.renderPage({
@@ -25,6 +24,7 @@ class MyDocument extends Document {
         const stylesheets = serverStyletron.getStylesheets() || [];
         return { ...initialProps, stylesheets };
     }
+
     render() {
         return (
             <Html lang='es'>
@@ -35,24 +35,15 @@ class MyDocument extends Document {
                         href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'
                         rel='stylesheet'
                     />
-                    {/* @ts-ignore */}
-                    {this.props.stylesheets.map(
-                        (
-                            sheet: {
-                                css: any;
-                                attrs: { [x: string]: any; media: string };
-                            },
-                            i: Key
-                        ) => (
-                            <style
-                                className='_styletron_hydrate_'
-                                dangerouslySetInnerHTML={{ __html: sheet.css }}
-                                media={sheet.attrs.media}
-                                data-hydrate={sheet.attrs['data-hydrate']}
-                                key={i}
-                            />
-                        )
-                    )}
+                    {this.props.stylesheets.map((sheet, i) => (
+                        <style
+                            className='_styletron_hydrate_'
+                            dangerouslySetInnerHTML={{ __html: sheet.css }}
+                            media={sheet.attrs.media}
+                            data-hydrate={sheet.attrs['data-hydrate']}
+                            key={i}
+                        />
+                    ))}
                 </Head>
                 <body>
                     <Main />
