@@ -17,13 +17,16 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ProductContainer = styled('div', {
+export const ProductContainer = styled('div', ({ $theme }) => ({
     display: 'flex',
-    flexDirection: 'column',
+    alignItems: 'center',
     height: '100%',
     width: '100%',
     gap: '1.5em',
-});
+    [$theme.mediaQuery.medium]: {
+        flexDirection: 'column',
+    },
+}));
 
 export const ProductImageContainer = styled('div', ({ $theme }) => ({
     width: '100%',
@@ -36,6 +39,8 @@ export const ProductImageContainer = styled('div', ({ $theme }) => ({
 export const ProductContentContainer = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '50vh',
     width: '100%',
     gap: '1.5em',
 }));
