@@ -1,5 +1,4 @@
 import { styled, withStyle } from 'baseui';
-import { Icon } from 'baseui/icon';
 import { Spinner } from 'baseui/spinner';
 
 export const CatalogBody = styled('div', ({ $theme }) => ({

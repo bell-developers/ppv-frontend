@@ -1,15 +1,21 @@
-import { styled, withStyle } from 'baseui';
+import { styled } from 'baseui';
 import { Button } from 'baseui/button';
 import { HeadingXSmall } from 'baseui/typography';
 
-export const ProductPageBody = styled('div', {
+export const ProductPageBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    padding: '0 1em',
+    padding: '0 10em 3.5em 10em',
     maxWidth: '100vw',
     minHeight: '100vh',
     gap: '1em',
-});
+    [$theme.mediaQuery.medium]: {
+        padding: '0 13vw',
+    },
+    [$theme.mediaQuery.small]: {
+        padding: '0 1em',
+    },
+}));
 
 export const ProductContainer = styled('div', {
     display: 'flex',
