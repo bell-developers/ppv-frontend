@@ -1,12 +1,6 @@
 import { HeaderNavigation, StyledNavigationItem } from 'baseui/header-navigation';
 import { styled, withStyle } from 'baseui';
 
-export const HeaderNavigationOverrides = {
-    Root: {
-        style: {},
-    },
-};
-
 export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => ({
     position: 'sticky',
     top: '0',
@@ -14,9 +8,6 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => (
     right: '0',
     width: '100%',
     maxWidth: '1250px',
-    borderBottomWidth: 'none',
-    borderBottomStyle: 'none',
-    borderBottomColor: 'none',
     backgroundColor: $theme.colors.backgroundPrimary,
     zIndex: 1,
     paddingTop: '1em',
@@ -29,6 +20,7 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => (
         left: '0',
         right: '0',
         width: '100%',
+        borderBottom: '1px solid rgba(0%, 0%, 0%, 0.04)',
         backgroundColor: $theme.colors.backgroundPrimary,
         paddingTop: '1em',
         zIndex: '-1',
