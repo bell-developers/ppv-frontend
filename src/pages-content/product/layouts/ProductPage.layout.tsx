@@ -1,14 +1,15 @@
 import { styled } from 'baseui';
 import { Button } from 'baseui/button';
-import { HeadingXSmall } from 'baseui/typography';
+import { DisplaySmall } from 'baseui/typography';
 
 export const ProductPageBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    padding: '0 10em 3.5em 10em',
+    padding: '0 10em 1em 10em',
     maxWidth: '100vw',
     minHeight: '100vh',
-    gap: '1em',
+    boxSizing: 'border-box',
+    gap: '2.5em',
     [$theme.mediaQuery.medium]: {
         padding: '0 13vw',
     },
@@ -19,10 +20,9 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
 
 export const ProductContainer = styled('div', ({ $theme }) => ({
     display: 'flex',
-    alignItems: 'center',
-    height: '100%',
     width: '100%',
-    gap: '1.5em',
+    borderRadius: $theme.borders.radius500,
+    ...$theme.borders.border400,
     [$theme.mediaQuery.medium]: {
         flexDirection: 'column',
     },
@@ -30,18 +30,27 @@ export const ProductContainer = styled('div', ({ $theme }) => ({
 
 export const ProductImageContainer = styled('div', ({ $theme }) => ({
     width: '100%',
-    aspectRatio: '1 / 1.1',
-    backgroundColor: 'red',
-    borderRadius: $theme.borders.radius300,
-    boxShadow: '0px 4px 16px 0px #0000001F',
+    aspectRatio: '1 / 1',
+    backgroundColor: $theme.colors.backgroundInverseSecondary,
+    borderTopLeftRadius: $theme.borders.radius500,
+    borderBottomLeftRadius: $theme.borders.radius500,
 }));
 
 export const ProductContentContainer = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '50vh',
+    height: '100%',
     width: '100%',
+    padding: '1.5em',
+    boxSizing: 'border-box',
+}));
+
+export const ProductNameAndPrice = styled('div', () => ({
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: 'fit-content',
     gap: '1.5em',
 }));
 
@@ -49,6 +58,7 @@ export const ProductSizesSection = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
+    height: 'fit-content',
     gap: '0.5em',
 }));
 
@@ -69,16 +79,9 @@ export const ProductSize = styled('div', ({ $theme }) => ({
     fontFamily: 'Poppins, sans-serif',
 }));
 
-export const ProductPriceContainer = styled('div', () => ({
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: 'auto auto',
-    gap: '0.5em',
+export const ProductPrice = styled(DisplaySmall, ({ $theme }) => ({
+    color: $theme.colors.accent,
 }));
-
-export const ProductPrice = styled(HeadingXSmall, {
-    justifySelf: 'flex-end',
-});
 
 export const ProductCTA = styled(Button, {
     gridColumn: '1 / 3',

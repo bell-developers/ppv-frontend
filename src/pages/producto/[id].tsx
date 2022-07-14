@@ -1,4 +1,4 @@
-import { DisplaySmall, HeadingXSmall, LabelMedium } from 'baseui/typography';
+import { HeadingLarge, LabelMedium } from 'baseui/typography';
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -7,9 +7,9 @@ import {
     ProductContentContainer,
     ProductCTA,
     ProductImageContainer,
+    ProductNameAndPrice,
     ProductPageBody,
     ProductPrice,
-    ProductPriceContainer,
     ProductSize,
     ProductSizesContainer,
     ProductSizesSection,
@@ -28,7 +28,10 @@ function ProductPage() {
             <ProductContainer>
                 <ProductImageContainer></ProductImageContainer>
                 <ProductContentContainer>
-                    <DisplaySmall>Buzo con capucha</DisplaySmall>
+                    <ProductNameAndPrice>
+                        <HeadingLarge>Buzo con capucha</HeadingLarge>
+                        <ProductPrice>$3000</ProductPrice>
+                    </ProductNameAndPrice>
                     <ProductSizesSection>
                         <LabelMedium>Talles</LabelMedium>
                         <ProductSizesContainer>
@@ -37,11 +40,7 @@ function ProductPage() {
                             ))}
                         </ProductSizesContainer>
                     </ProductSizesSection>
-                    <ProductPriceContainer>
-                        <HeadingXSmall>Precio</HeadingXSmall>
-                        <ProductPrice>$3000</ProductPrice>
-                        <ProductCTA>Comprar</ProductCTA>
-                    </ProductPriceContainer>
+                    <ProductCTA>Comprar</ProductCTA>
                 </ProductContentContainer>
             </ProductContainer>
         </ProductPageBody>
