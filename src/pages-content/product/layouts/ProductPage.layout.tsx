@@ -40,7 +40,6 @@ export const ProductContentContainer = styled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '100%',
     width: '100%',
     padding: '1.5em',
     boxSizing: 'border-box',
@@ -52,6 +51,10 @@ export const ProductNameAndPrice = styled('div', () => ({
     width: '100%',
     height: 'fit-content',
     gap: '1.5em',
+}));
+
+export const ProductPrice = styled(DisplaySmall, ({ $theme }) => ({
+    color: $theme.colors.accent,
 }));
 
 export const ProductSizesSection = styled('div', () => ({
@@ -77,10 +80,6 @@ export const ProductSize = styled('div', ({ $theme }) => ({
     backgroundColor: $theme.colors.backgroundTertiary,
     borderRadius: $theme.borders.radius300,
     fontFamily: 'Poppins, sans-serif',
-}));
-
-export const ProductPrice = styled(DisplaySmall, ({ $theme }) => ({
-    color: $theme.colors.accent,
 }));
 
 export const ProductCTA = styled(Button, {
