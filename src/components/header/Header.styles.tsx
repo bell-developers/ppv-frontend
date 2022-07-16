@@ -12,7 +12,7 @@ export const StyledHeaderNavigation = styled(HeaderNavigation, ({ $theme }) => (
     zIndex: 1,
     paddingTop: '1em',
     paddingBottom: '1em',
-    fontSize: 'clamp(12px, 1.2vw, 24px)',
+    fontSize: 'clamp(12px, 1.2vw, 20px)',
     ':before': {
         content: '""',
         position: 'fixed',

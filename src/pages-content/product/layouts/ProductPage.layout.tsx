@@ -6,9 +6,9 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: '0 10em 1em 10em',
-    maxWidth: '100vw',
     minHeight: '100vh',
     boxSizing: 'border-box',
+    fontSize: 'clamp(12px, 1.2vw, 20px)',
     gap: '2.5em',
     [$theme.mediaQuery.medium]: {
         padding: '0 13vw',
@@ -22,12 +22,17 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
 export const ProductContainer = styled('div', ({ $theme }) => ({
     display: 'flex',
     width: '100%',
+    maxWidth: '1250px',
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
     boxSizing: 'border-box',
     [$theme.mediaQuery.medium]: {
         flexDirection: 'column',
         width: '60vw',
+    },
+    [$theme.mediaQuery.small]: {
+        flexDirection: 'column',
+        width: '100%',
     },
 }));
 

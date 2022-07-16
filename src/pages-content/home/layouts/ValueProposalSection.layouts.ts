@@ -12,7 +12,7 @@ export const ValueProposalSection = styled('div', ({ $theme }) => ({
     borderBottom: `1px solid ${$theme.colors.borderOpaque}`,
     boxSizing: 'border-box',
     maxWidth: '1250px',
-    fontSize: 'clamp(12px, 1.2vw, 24px)',
+    fontSize: 'clamp(12px, 1.2vw, 20px)',
     [$theme.mediaQuery.medium]: {
         flexDirection: 'column-reverse',
         justifyContent: 'flex-end',
