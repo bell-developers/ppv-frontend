@@ -12,6 +12,7 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
     gap: '2.5em',
     [$theme.mediaQuery.medium]: {
         padding: '0 13vw',
+        alignItems: 'center',
     },
     [$theme.mediaQuery.small]: {
         padding: '0 1em',
@@ -23,8 +24,10 @@ export const ProductContainer = styled('div', ({ $theme }) => ({
     width: '100%',
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
+    boxSizing: 'border-box',
     [$theme.mediaQuery.medium]: {
         flexDirection: 'column',
+        width: '60vw',
     },
 }));
 
@@ -34,15 +37,23 @@ export const ProductImageContainer = styled('div', ({ $theme }) => ({
     backgroundColor: $theme.colors.backgroundInverseSecondary,
     borderTopLeftRadius: $theme.borders.radius500,
     borderBottomLeftRadius: $theme.borders.radius500,
+    [$theme.mediaQuery.medium]: {
+        borderTopLeftRadius: $theme.borders.radius500,
+        borderTopRightRadius: $theme.borders.radius500,
+        borderBottomLeftRadius: 0,
+    },
 }));
 
-export const ProductContentContainer = styled('div', () => ({
+export const ProductContentContainer = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     width: '100%',
     padding: '1.5em',
     boxSizing: 'border-box',
+    [$theme.mediaQuery.medium]: {
+        gap: '2em',
+    },
 }));
 
 export const ProductNameAndPrice = styled('div', () => ({
