@@ -1,18 +1,30 @@
-import { StyledNavigationList, ALIGN } from 'baseui/header-navigation';
+import { StyledNavigationList, ALIGN, HeaderNavigation } from 'baseui/header-navigation';
 import { LabelLarge } from 'baseui/typography';
 import Link from 'next/link';
-import { CustomHomeLogo, StyledHeaderNavigation } from './Header.styles';
+import { CustomHomeLogo } from './Header.styles';
 
 const Header = () => (
-    <StyledHeaderNavigation>
+    <HeaderNavigation
+        overrides={{
+            Root: {
+                style: ({ $theme }) => ({
+                    position: 'sticky',
+                    top: 0,
+                    width: '100%',
+                    zIndex: 10,
+                    borderBottomColor: $theme.borders.border200.borderColor,
+                }),
+            },
+        }}
+    >
         <StyledNavigationList $align={ALIGN.left}>
             <CustomHomeLogo>
                 <Link href='/'>
-                    <LabelLarge>Logo</LabelLarge>
+                    <LabelLarge>Bell</LabelLarge>
                 </Link>
             </CustomHomeLogo>
         </StyledNavigationList>
-    </StyledHeaderNavigation>
+    </HeaderNavigation>
 );
 
 export default Header;
