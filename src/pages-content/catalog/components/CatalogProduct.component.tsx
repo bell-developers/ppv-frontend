@@ -18,10 +18,11 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
             <div
                 className={css({
                     display: 'flex',
-                    alignItems: 'center',
                     flexDirection: 'column',
-                    gap: '0.5em',
+                    alignItems: 'center',
                     width: '100%',
+                    borderRadius: theme.borders.radius500,
+                    ...theme.borders.border300,
                     textAlign: 'center',
                     cursor: 'pointer',
                 })}
@@ -31,38 +32,50 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                         position: 'relative',
                         width: '100%',
                         aspectRatio: '1 / 1',
-                        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.06)',
-                        borderRadius: '.5em',
-                        ...theme.borders.border200,
+                        backgroundColor: 'blue',
                         transition: 'box-shadow .3s ease, transform .3s ease',
-                        ':hover': {
-                            boxShadow: '0 2px 16px rgba(0, 0, 0, 0.06)',
-                            transform: 'scale(1.03)',
-                        },
+                        borderBottomWidth: theme.borders.border300.borderWidth,
+                        borderBottomStyle: 'solid',
+                        borderBottomColor: theme.borders.border300.borderColor,
+                        borderTopLeftRadius: theme.borders.radius500,
+                        borderTopRightRadius: theme.borders.radius500,
                     })}
                 >
                     <Image
                         src={productData.images[0]}
                         layout='fill'
                         className={css({
-                            borderRadius: '.5em',
+                            borderTopLeftRadius: theme.borders.radius500,
+                            borderTopRightRadius: theme.borders.radius500,
                             objectFit: 'cover',
                         })}
                         alt={productData.name}
                     />
                 </div>
-                <div>
+                <div
+                    className={css({
+                        display: 'flex',
+                        width: '100%',
+                        justifyContent: 'space-between',
+                        padding: '1em',
+                        boxSizing: 'border-box',
+                        backgroundColor: theme.colors.backgroundPrimary,
+                        borderBottomLeftRadius: theme.borders.radius500,
+                        borderBottomRightRadius: theme.borders.radius500,
+                    })}
+                >
                     <HeadingXSmall
                         className={css({
-                            fontWeight: '400',
+                            fontWeight: '500',
                         })}
                     >
                         {productData.name}
                     </HeadingXSmall>
                     <HeadingXSmall
                         className={css({
-                            color: theme.colors.contentSecondary,
-                            fontWeight: '400',
+                            justifySelf: 'flex-end',
+                            color: theme.colors.accent,
+                            fontWeight: '500',
                         })}
                     >
                         {productData.price}$
