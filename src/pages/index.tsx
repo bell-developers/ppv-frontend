@@ -1,19 +1,5 @@
 import { NextPage } from 'next';
-import {
-    DisplayMedium,
-    DisplaySmall,
-    HeadingXLarge,
-    ParagraphLarge,
-} from 'baseui/typography';
-import {
-    ValueProposalContent,
-    ValueProposalImages,
-    ValueProposalSection,
-    ValueProposalImageContainer1,
-    ValueProposalImageContainer2,
-    ValueProposalImage,
-    ValueProposalSubtitle,
-} from 'pages-content/home/layouts/ValueProposalSection.layouts';
+import { DisplaySmall, HeadingXLarge, ParagraphLarge } from 'baseui/typography';
 import { HomeBody } from 'pages-content/home/layouts/Home.layouts';
 import {
     BenefitContainer,
@@ -27,8 +13,7 @@ import {
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from 'baseui/button';
+import { ValueProposalLayout } from 'pages-content/home/layouts/ValueProposalSection.layouts';
 
 const HomePage: NextPage = () => {
     return (
@@ -37,37 +22,7 @@ const HomePage: NextPage = () => {
                 <title>Inicio - PPV</title>
             </Head>
             <Header />
-            <ValueProposalSection>
-                <ValueProposalContent>
-                    <DisplayMedium as='h1'>
-                        La ropa que siempre deseaste comprar
-                    </DisplayMedium>
-                    <ValueProposalSubtitle>
-                        En nuestra tienda encontrarás las prendas perfectas para vos
-                    </ValueProposalSubtitle>
-                    <Link href='/catalogo'>
-                        <Button $style={{ width: '10em' }}>Ver catálogo</Button>
-                    </Link>
-                </ValueProposalContent>
-                <ValueProposalImages>
-                    <ValueProposalImageContainer1>
-                        <ValueProposalImage
-                            src='/girl1.jpg'
-                            alt='Product Image 1'
-                            layout='fill'
-                            priority={true}
-                        />
-                    </ValueProposalImageContainer1>
-                    <ValueProposalImageContainer2>
-                        <ValueProposalImage
-                            src='/girl2.jpg'
-                            alt='Product Image 2'
-                            layout='fill'
-                            priority={true}
-                        />
-                    </ValueProposalImageContainer2>
-                </ValueProposalImages>
-            </ValueProposalSection>
+            <ValueProposalLayout />
             <BenefitsSection>
                 <BenefitsTitleContainer>
                     <DisplaySmall as='h3' overrides={BenefitsTitleOverride}>
