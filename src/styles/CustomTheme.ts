@@ -10,11 +10,11 @@ const overrides = {
         buttonPrimaryText: DarkTheme.colors.contentPrimary,
         buttonPrimaryHover: DarkTheme.colors.accent500,
     },
-    mediaQuery: {
-        small: '@media screen and (max-width: 480px)',
-        medium: '@media screen and (max-width: 960px)',
-        large: '@media screen and (max-width: 1328px)',
-    },
+    // mediaQuery: {
+    //     small: '@media screen and (max-width: 480px)',
+    //     medium: '@media screen and (max-width: 960px)',
+    //     large: '@media screen and (max-width: 1328px)',
+    // },
     // typography: {
     //     DisplayMedium: {
     //         fontSize: '3.25em',
