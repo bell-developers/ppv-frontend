@@ -10,7 +10,7 @@ const Header = () => (
                 style: ({ $theme }) => ({
                     position: 'sticky',
                     top: 0,
-                    width: '100%',
+                    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
                     zIndex: 10,
                     borderBottomColor: $theme.borders.border200.borderColor,
                 }),
