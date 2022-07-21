@@ -1,4 +1,5 @@
 import { createLightTheme, DarkTheme } from 'baseui';
+import type { Theme } from 'baseui';
 
 const primitives = {
     primaryFontFamily: 'Poppins',
@@ -18,4 +19,6 @@ const custom = {
     pageMaxWidth: '1200px',
 };
 
-export const CustomTheme = { ...theme, ...custom };
+type CustomThemeT = Theme & { custom: typeof custom };
+
+export const CustomTheme: CustomThemeT = { ...theme, custom };
