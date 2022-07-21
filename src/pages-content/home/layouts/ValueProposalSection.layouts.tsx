@@ -11,7 +11,7 @@ export const ValueProposalLayout = () => {
     return (
         <main
             className={css({
-                width: '100%',
+                width: `min(${theme.custom.pageMaxWidth}, 100%)`,
                 height: 'fit-content',
                 marginTop: theme.sizing.scale950,
             })}
