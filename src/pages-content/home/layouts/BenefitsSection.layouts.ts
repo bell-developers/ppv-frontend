@@ -1,14 +1,13 @@
 import { styled, withStyle } from 'baseui';
 
-export const BenefitsSection = styled('div', {
+export const BenefitsSection = styled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '5em',
     padding: '5em 0',
-    width: '100%',
-    maxWidth: '1250px',
+    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
     fontSize: 'clamp(12px, 1.2vw, 20px)',
-});
+}));
 
 export const BenefitsTitleContainer = styled('div', {
     display: 'flex',
