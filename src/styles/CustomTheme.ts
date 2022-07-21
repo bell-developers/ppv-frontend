@@ -10,39 +10,12 @@ const overrides = {
         buttonPrimaryText: DarkTheme.colors.contentPrimary,
         buttonPrimaryHover: DarkTheme.colors.accent500,
     },
-    // mediaQuery: {
-    //     small: '@media screen and (max-width: 480px)',
-    //     medium: '@media screen and (max-width: 960px)',
-    //     large: '@media screen and (max-width: 1328px)',
-    // },
-    // typography: {
-    //     DisplayMedium: {
-    //         fontSize: '3.25em',
-    //         fontWeight: '600',
-    //         lineHeight: '1.23em',
-    //     },
-    //     DisplaySmall: {
-    //         fontSize: '2.75em',
-    //         lineHeight: '1.18em',
-    //     },
-    //     HeadingXSmall: {
-    //         fontSize: '1.25em',
-    //         lineHeight: '1.4em',
-    //     },
-    //     LabelLarge: {
-    //         fontSize: '1.125em',
-    //         lineHeight: '1.33em',
-    //     },
-    //     HeadingXLarge: {
-    //         fontSize: '2.25em',
-    //         lineHeight: '1.22em',
-    //     },
-    //     ParagraphLarge: {
-    //         fontSize: '1.125em',
-    //         lineHeight: '1.55em',
-    //     },
-    // },
 };
 
-export const CustomTheme = createLightTheme(primitives, overrides);
-// export const CustomTheme = createDarkTheme(primitives, overrides);
+export const theme = createLightTheme(primitives, overrides);
+
+const custom = {
+    pageMaxWidth: '1200px',
+};
+
+export const CustomTheme = { ...theme, ...custom };
