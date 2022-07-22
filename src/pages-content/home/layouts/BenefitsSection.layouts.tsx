@@ -13,7 +13,7 @@ const BenefitsSectionLayout = () => {
                 gap: '5em',
                 padding: '5em 0',
                 width: `min(${theme.custom.pageMaxWidth}, 100%)`,
-                fontSize: 'clamp(12px, 1.2vw, 20px)',
+                fontSize: 'clamp(16px, 1.2vw, 20px)',
             })}
         >
             <div
@@ -42,14 +42,19 @@ const BenefitsSectionLayout = () => {
             <div
                 className={css({
                     display: 'flex',
+                    flexDirection: 'column-reverse',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '6.5em',
-                    padding: '5em 6.5em',
+                    padding: '3vh 6vw',
+                    gap: '5vw',
                     backgroundColor: theme.colors.backgroundSecondary,
+                    [theme.mediaQuery.large]: {
+                        flexDirection: 'row',
+                        gap: '6.5em',
+                        padding: '5em 6.5em',
+                    },
                     [theme.mediaQuery.medium]: {
-                        padding: '3vh 6vw',
-                        gap: '5vw',
+                        padding: '8vh 8vw',
                     },
                     [theme.mediaQuery.small]: {
                         flexDirection: 'column-reverse',
@@ -89,15 +94,19 @@ const BenefitsSectionLayout = () => {
             <div
                 className={css({
                     display: 'flex',
+                    flexDirection: 'column-reverse',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '6.5em',
-                    padding: '5em 6.5em',
+                    padding: '3vh 6vw',
+                    gap: '5vw',
                     backgroundColor: theme.colors.backgroundSecondary,
-                    flexDirection: 'row-reverse',
+                    [theme.mediaQuery.large]: {
+                        flexDirection: 'row-reverse',
+                        gap: '6.5em',
+                        padding: '5em 6.5em',
+                    },
                     [theme.mediaQuery.medium]: {
-                        padding: '3vh 6vw',
-                        gap: '5vw',
+                        padding: '8vh 8vw',
                     },
                     [theme.mediaQuery.small]: {
                         flexDirection: 'column-reverse',
