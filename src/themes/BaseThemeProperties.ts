@@ -14,7 +14,7 @@ const overrides = {
 };
 
 const custom: CustomThemeProperties = {
-    pageMaxWidth: '1200px',
+    pageMaxWidth: '850px',
 };
 
 const BaseThemeProperties = {

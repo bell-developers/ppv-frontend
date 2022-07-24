@@ -9,7 +9,7 @@ export const HomeBody = styled('div', ({ $theme }) => ({
     padding: '0 1em',
     backgroundColor: $theme.colors.backgroundPrimary,
     [$theme.mediaQuery.large]: {
-        padding: '0 12em',
+        padding: '0 0',
     },
     [$theme.mediaQuery.medium]: {
         padding: '0 15vw',
