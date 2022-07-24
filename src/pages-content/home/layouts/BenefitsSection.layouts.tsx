@@ -20,12 +20,20 @@ const Benefit = (props: BenefitProps) => {
             className={css({
                 display: 'flex',
                 justifyContent: 'center',
-                paddingTop: 'min(4rem, 10vh)',
-                paddingBottom: 'min(2rem, 10vh)',
+                paddingTop: 'min(2rem, 10vh)',
+                paddingBottom: '1rem',
                 backgroundColor: theme.colors.backgroundSecondary,
+                [theme.mediaQuery.medium]: {
+                    paddingTop: 'min(4rem, 10vh)',
+                    paddingBottom: 'min(2rem, 10vh)',
+                },
             })}
         >
-            <Grid gridMargins={[24, 64, 104]} align={ALIGNMENT.center} gridGaps={32}>
+            <Grid
+                gridMargins={[32, 64, 104]}
+                align={ALIGNMENT.center}
+                gridGaps={[16, 32, 32]}
+            >
                 <Cell span={[4, 8, 6]} order={reverse === false ? [1, 1, 0] : [1, 1, 1]}>
                     <div
                         className={css({
