@@ -12,7 +12,7 @@ export const HomeBody = styled('div', ({ $theme }) => ({
         padding: '0 12em',
     },
     [$theme.mediaQuery.medium]: {
-        padding: '0 4em',
+        padding: '0 15vw',
     },
     [$theme.mediaQuery.small]: {
         padding: '0 1em',

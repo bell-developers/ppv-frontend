@@ -1,6 +1,64 @@
 import { useStyletron } from 'baseui';
-import { DisplaySmall, HeadingXLarge, ParagraphLarge } from 'baseui/typography';
+import { ALIGNMENT, Cell, Grid } from 'baseui/layout-grid';
+import { DisplayXSmall, HeadingMedium, ParagraphLarge } from 'baseui/typography';
 import Image from 'next/image';
+
+type BenefitProps = {
+    title: string;
+    content: string;
+    imageUrl: string;
+    imageAlt: string;
+    reverse?: boolean;
+};
+
+const Benefit = (props: BenefitProps) => {
+    const { title, content, imageUrl, imageAlt, reverse = false } = props;
+    const [css, theme] = useStyletron();
+
+    return (
+        <div
+            className={css({
+                display: 'flex',
+                justifyContent: 'center',
+                paddingTop: 'min(4rem, 10vh)',
+                paddingBottom: 'min(2rem, 10vh)',
+                backgroundColor: theme.colors.backgroundSecondary,
+            })}
+        >
+            <Grid gridMargins={[24, 64, 104]} align={ALIGNMENT.center} gridGaps={32}>
+                <Cell span={[4, 8, 6]} order={reverse === false ? [1, 1, 0] : [1, 1, 1]}>
+                    <div
+                        className={css({
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            gap: '1.5em',
+                        })}
+                    >
+                        <HeadingMedium as='h4'>{title}</HeadingMedium>
+                        <ParagraphLarge>{content}</ParagraphLarge>
+                    </div>
+                </Cell>
+                <Cell span={[4, 8, 6]}>
+                    <div
+                        className={css({
+                            position: 'relative',
+                            aspectRatio: '1.3 / 1',
+                            borderRadius: theme.borders.radius300,
+                        })}
+                    >
+                        <Image
+                            src={imageUrl}
+                            layout='fill'
+                            alt={imageAlt}
+                            style={{ borderRadius: '8px' }}
+                        />
+                    </div>
+                </Cell>
+            </Grid>
+        </div>
+    );
+};
 
 const BenefitsSectionLayout = () => {
     const [css, theme] = useStyletron();
@@ -10,10 +68,9 @@ const BenefitsSectionLayout = () => {
             className={css({
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '5em',
-                padding: '5em 0',
+                gap: '5rem',
                 width: `min(${theme.custom.pageMaxWidth}, 100%)`,
-                fontSize: 'clamp(16px, 1.2vw, 20px)',
+                marginBottom: '5rem',
             })}
         >
             <div
@@ -25,7 +82,7 @@ const BenefitsSectionLayout = () => {
                     width: '100%',
                 })}
             >
-                <DisplaySmall
+                <DisplayXSmall
                     as='h3'
                     overrides={{
                         Block: {
@@ -37,114 +94,21 @@ const BenefitsSectionLayout = () => {
                     }}
                 >
                     ¡Animate a comprar por internet!
-                </DisplaySmall>
+                </DisplayXSmall>
             </div>
-            <div
-                className={css({
-                    display: 'flex',
-                    flexDirection: 'column-reverse',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '3vh 6vw',
-                    gap: '5vw',
-                    backgroundColor: theme.colors.backgroundSecondary,
-                    [theme.mediaQuery.large]: {
-                        flexDirection: 'row',
-                        gap: '6.5em',
-                        padding: '5em 6.5em',
-                    },
-                    [theme.mediaQuery.medium]: {
-                        padding: '8vh 8vw',
-                    },
-                    [theme.mediaQuery.small]: {
-                        flexDirection: 'column-reverse',
-                    },
-                })}
-            >
-                <div
-                    className={css({
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1.5em',
-                        width: '100%',
-                    })}
-                >
-                    <HeadingXLarge as='h4'>Comprá desde tu casa</HeadingXLarge>
-                    <ParagraphLarge>
-                        Ya no es necesario venir a nuestra tienda, podés hacerlo desde la
-                        comodidad de tu hogar.
-                    </ParagraphLarge>
-                </div>
-                <div
-                    className={css({
-                        width: '100%',
-                        position: 'relative',
-                        aspectRatio: '1.3 / 1',
-                        borderRadius: theme.borders.radius300,
-                    })}
-                >
-                    <Image
-                        src='/sofa.jpg'
-                        layout='fill'
-                        alt='Comprá desde tu casa'
-                        style={{ borderRadius: '8px' }}
-                    />
-                </div>
-            </div>
-            <div
-                className={css({
-                    display: 'flex',
-                    flexDirection: 'column-reverse',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '3vh 6vw',
-                    gap: '5vw',
-                    backgroundColor: theme.colors.backgroundSecondary,
-                    [theme.mediaQuery.large]: {
-                        flexDirection: 'row-reverse',
-                        gap: '6.5em',
-                        padding: '5em 6.5em',
-                    },
-                    [theme.mediaQuery.medium]: {
-                        padding: '8vh 8vw',
-                    },
-                    [theme.mediaQuery.small]: {
-                        flexDirection: 'column-reverse',
-                    },
-                })}
-            >
-                <div
-                    className={css({
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1.5em',
-                        width: '100%',
-                    })}
-                >
-                    <HeadingXLarge as='h4'>
-                        Utilizá la forma de pago que más te guste
-                    </HeadingXLarge>
-                    <ParagraphLarge>
-                        Ofrecemos varias formas de pago para que elijas la que más te
-                        convenga.
-                    </ParagraphLarge>
-                </div>
-                <div
-                    className={css({
-                        width: '100%',
-                        position: 'relative',
-                        aspectRatio: '1.3 / 1',
-                        borderRadius: theme.borders.radius300,
-                    })}
-                >
-                    <Image
-                        src='/pay.jpg'
-                        layout='fill'
-                        alt='Utilizá la forma de pago que más te guste'
-                        style={{ borderRadius: '8px' }}
-                    />
-                </div>
-            </div>
+            <Benefit
+                title='Comprá desde tu casa'
+                content='Ya no es necesario venir a nuestra tienda, podés hacerlo desde la comodidad de tu hogar.'
+                imageUrl='/sofa.jpg'
+                imageAlt='Comprá desde tu casa.'
+            />
+            <Benefit
+                title='Utilizá la forma de pago que más te guste'
+                content='Ofrecemos varias formas de pago para que elijas la que más te convenga.'
+                imageUrl='/pay.jpg'
+                imageAlt='Utilizá la forma de pago que más te guste.'
+                reverse
+            />
         </div>
     );
 };
