@@ -78,6 +78,7 @@ const BenefitsSectionLayout = () => {
                 flexDirection: 'column',
                 gap: '5rem',
                 width: `min(${theme.custom.pageMaxWidth}, 100%)`,
+                marginTop: '12vh',
                 marginBottom: '5rem',
             })}
         >
