@@ -4,7 +4,6 @@ import BenefitsSectionLayout from 'pages-content/home/layouts/BenefitsSection.la
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import { ValueProposalLayout } from 'pages-content/home/layouts/ValueProposalSection.layouts';
-import Footer from 'components/footer/Footer';
 
 const HomePage: NextPage = () => {
     return (
@@ -15,7 +14,6 @@ const HomePage: NextPage = () => {
             <Header />
             <ValueProposalLayout />
             <BenefitsSectionLayout />
-            <Footer />
         </HomeBody>
     );
 };
