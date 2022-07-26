@@ -23,7 +23,7 @@ const CatalogPage: NextPage = () => {
             <Head>
                 <title>Catálogo - PPV</title>
             </Head>
-            <Header />
+            <Header fullWidth={true} />
             <CatalogTitleContainer>
                 <DisplaySmall>Catálogo</DisplaySmall>
             </CatalogTitleContainer>
