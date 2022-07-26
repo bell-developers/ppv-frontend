@@ -32,13 +32,15 @@ export const CatalogTitleContainer = styled('div', ({ $theme }) => ({
 
 export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
     gridAutoRows: 'auto',
     gap: '2em',
-    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
+    width: `100%`,
     boxSizing: 'border-box',
-    [$theme.mediaQuery.medium]: {
-        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+    [$theme.mediaQuery.large]: {
+        gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
+        padding: 0,
+        width: `min(1000px, 80%)`,
     },
     [$theme.mediaQuery.small]: {
         padding: '0 1em',

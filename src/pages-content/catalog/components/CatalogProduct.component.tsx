@@ -32,7 +32,6 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                         position: 'relative',
                         width: '100%',
                         aspectRatio: '1 / 1',
-                        backgroundColor: 'blue',
                         transition: 'box-shadow .3s ease, transform .3s ease',
                         borderBottomWidth: theme.borders.border300.borderWidth,
                         borderBottomStyle: 'solid',
@@ -55,9 +54,9 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                 <div
                     className={css({
                         display: 'flex',
-                        width: '100%',
                         justifyContent: 'space-between',
-                        padding: '1em',
+                        width: '100%',
+                        padding: '1rem',
                         boxSizing: 'border-box',
                         backgroundColor: theme.colors.backgroundPrimary,
                         borderBottomLeftRadius: theme.borders.radius500,
@@ -66,7 +65,7 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                 >
                     <HeadingXSmall
                         className={css({
-                            fontWeight: '500',
+                            fontWeight: '400',
                         })}
                     >
                         {productData.name}
@@ -75,7 +74,7 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                         className={css({
                             justifySelf: 'flex-end',
                             color: theme.colors.accent,
-                            fontWeight: '500',
+                            fontWeight: '600',
                         })}
                     >
                         {productData.price}$
