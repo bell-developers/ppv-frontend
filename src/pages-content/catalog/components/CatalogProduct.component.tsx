@@ -4,6 +4,11 @@ import { FC } from 'react';
 import { useStyletron } from 'baseui';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+    CatalogProductContainer,
+    CatalogProductDataContainer,
+    CatalogProductImageContainer,
+} from './CatalogProduct.styles';
 
 type CatalogProductProps = {
     productData: Product;
@@ -15,31 +20,8 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
 
     return (
         <Link href={'/producto/' + productData.id}>
-            <div
-                className={css({
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    width: '100%',
-                    borderRadius: theme.borders.radius500,
-                    ...theme.borders.border300,
-                    textAlign: 'center',
-                    cursor: 'pointer',
-                })}
-            >
-                <div
-                    className={css({
-                        position: 'relative',
-                        width: '100%',
-                        aspectRatio: '1 / 1',
-                        transition: 'box-shadow .3s ease, transform .3s ease',
-                        borderBottomWidth: theme.borders.border300.borderWidth,
-                        borderBottomStyle: 'solid',
-                        borderBottomColor: theme.borders.border300.borderColor,
-                        borderTopLeftRadius: theme.borders.radius500,
-                        borderTopRightRadius: theme.borders.radius500,
-                    })}
-                >
+            <CatalogProductContainer>
+                <CatalogProductImageContainer>
                     <Image
                         src={productData.images[0]}
                         layout='fill'
@@ -50,19 +32,8 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                         })}
                         alt={productData.name}
                     />
-                </div>
-                <div
-                    className={css({
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        width: '100%',
-                        padding: '1rem',
-                        boxSizing: 'border-box',
-                        backgroundColor: theme.colors.backgroundPrimary,
-                        borderBottomLeftRadius: theme.borders.radius500,
-                        borderBottomRightRadius: theme.borders.radius500,
-                    })}
-                >
+                </CatalogProductImageContainer>
+                <CatalogProductDataContainer>
                     <HeadingXSmall
                         className={css({
                             fontWeight: '400',
@@ -79,8 +50,8 @@ export const CatalogProduct: FC<CatalogProductProps> = props => {
                     >
                         {productData.price}$
                     </HeadingXSmall>
-                </div>
-            </div>
+                </CatalogProductDataContainer>
+            </CatalogProductContainer>
         </Link>
     );
 };
