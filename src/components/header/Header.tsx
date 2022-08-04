@@ -17,17 +17,20 @@ const Header = (props: HeaderProps) => (
                     width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
                     zIndex: 10,
                     borderBottomColor: $theme.borders.border200.borderColor,
-                    ':before': props.fullWidth === true && {
-                        content: '""',
-                        position: 'fixed',
-                        top: '0',
-                        left: '0',
-                        right: '0',
-                        width: '100vw',
-                        height: '3rem',
-                        backgroundColor: $theme.colors.backgroundPrimary,
-                        zIndex: '-1',
-                    },
+                    ':before':
+                        props.fullWidth === true
+                            ? {
+                                  content: '""',
+                                  position: 'fixed',
+                                  top: '0',
+                                  left: '0',
+                                  right: '0',
+                                  width: '100vw',
+                                  height: '3rem',
+                                  backgroundColor: $theme.colors.backgroundPrimary,
+                                  zIndex: '-1',
+                              }
+                            : null,
                 }),
             },
         }}
