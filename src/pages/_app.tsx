@@ -8,6 +8,7 @@ import { CustomLightTheme } from 'themes/CustomLightTheme';
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <Provider value={styletron}>
+            {/* Pass your theme in theme props */}
             <BaseProvider theme={CustomLightTheme}>
                 <Component {...pageProps} />
             </BaseProvider>
