@@ -1,5 +1,6 @@
 import { createDarkTheme } from 'baseui';
-import BaseThemeProperties, { CustomTheme } from './BaseThemeProperties';
+import BaseThemeProperties from './BaseThemeProperties';
+import { CustomTheme } from './CustomTheme.type';
 
 const { primitives, overrides, custom } = BaseThemeProperties;
 
