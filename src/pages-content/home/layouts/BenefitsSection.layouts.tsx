@@ -1,30 +1,14 @@
-import { useStyletron } from 'baseui';
 import { DisplayXSmall } from 'baseui/typography';
 import Benefit from '../components/Benefit.component';
+import {
+    BenefitsSectionContainer,
+    BenefitsSectionTitleContainer,
+} from './BenefitsSection.styles';
 
 const BenefitsSectionLayout = () => {
-    const [css, theme] = useStyletron();
-
     return (
-        <div
-            className={css({
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '5rem',
-                width: `min(${theme.custom.pageMaxWidth}, 100%)`,
-                marginTop: '12vh',
-                marginBottom: '5rem',
-            })}
-        >
-            <div
-                className={css({
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1.5em',
-                    textAlign: 'center',
-                    width: '100%',
-                })}
-            >
+        <BenefitsSectionContainer>
+            <BenefitsSectionTitleContainer>
                 <DisplayXSmall
                     as='h3'
                     overrides={{
@@ -38,7 +22,7 @@ const BenefitsSectionLayout = () => {
                 >
                     ¡Animate a comprar por internet!
                 </DisplayXSmall>
-            </div>
+            </BenefitsSectionTitleContainer>
             <Benefit
                 title='Comprá desde tu casa'
                 content='Ya no es necesario venir a nuestra tienda, podés hacerlo desde la comodidad de tu hogar.'
@@ -52,7 +36,7 @@ const BenefitsSectionLayout = () => {
                 imageAlt='Utilizá la forma de pago que más te guste.'
                 reverse
             />
-        </div>
+        </BenefitsSectionContainer>
     );
 };
 
