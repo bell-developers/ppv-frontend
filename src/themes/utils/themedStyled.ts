@@ -1,5 +1,6 @@
-import { createThemedStyled, Theme } from 'baseui';
+import { createThemedStyled } from 'baseui';
+import { CustomTheme } from 'themes/CustomTheme.type';
 
-const themedStyled = createThemedStyled<Theme>();
+const themedStyled = createThemedStyled<CustomTheme>();
 
 export default themedStyled;
