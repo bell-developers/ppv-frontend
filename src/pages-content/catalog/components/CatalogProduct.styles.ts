@@ -12,14 +12,15 @@ export const CatalogProductContainer = themedStyled('div', ({ $theme }) => ({
 }));
 
 export const CatalogProductImageContainer = themedStyled('div', ({ $theme }) => ({
-    display: 'flex',
-    justifyContent: 'space-between',
+    position: 'relative',
     width: '100%',
-    padding: '1rem',
-    boxSizing: 'border-box',
-    backgroundColor: $theme.colors.backgroundPrimary,
-    borderBottomLeftRadius: $theme.borders.radius500,
-    borderBottomRightRadius: $theme.borders.radius500,
+    aspectRatio: '1 / 1',
+    transition: 'box-shadow .3s ease, transform .3s ease',
+    borderBottomWidth: $theme.borders.border300.borderWidth,
+    borderBottomStyle: 'solid',
+    borderBottomColor: $theme.borders.border300.borderColor,
+    borderTopLeftRadius: $theme.borders.radius500,
+    borderTopRightRadius: $theme.borders.radius500,
 }));
 
 export const CatalogProductDataContainer = themedStyled('div', ({ $theme }) => ({
