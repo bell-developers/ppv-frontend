@@ -1,7 +1,7 @@
 import { StyledNavigationItem } from 'baseui/header-navigation';
-import { withStyle } from 'baseui';
+import themedWithStyle from 'themes/utils/themedWithStyle';
 
-export const CustomHomeLogo = withStyle(StyledNavigationItem, ({ $theme }) => ({
+export const CustomHomeLogo = themedWithStyle(StyledNavigationItem, ({ $theme }) => ({
     paddingLeft: 0,
     cursor: 'pointer',
     color: $theme.colors.contentPrimary,

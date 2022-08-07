@@ -1,6 +1,6 @@
-import { styled } from 'baseui';
+import themedStyled from 'themes/utils/themedStyled';
 
-export const HomeBody = styled('div', ({ $theme }) => ({
+export const HomeBody = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

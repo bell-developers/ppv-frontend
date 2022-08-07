@@ -1,8 +1,8 @@
-import { styled } from 'baseui';
 import { Button } from 'baseui/button';
 import { DisplaySmall } from 'baseui/typography';
+import themedStyled from 'themes/utils/themedStyled';
 
-export const ProductPageBody = styled('div', ({ $theme }) => ({
+export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: '0 10em 1em 10em',
@@ -19,7 +19,7 @@ export const ProductPageBody = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ProductContainer = styled('div', ({ $theme }) => ({
+export const ProductContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     width: '100%',
     maxWidth: '1250px',
@@ -36,7 +36,7 @@ export const ProductContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ProductImageContainer = styled('div', ({ $theme }) => ({
+export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     width: '100%',
     aspectRatio: '1 / 1',
     backgroundColor: $theme.colors.backgroundInverseSecondary,
@@ -49,7 +49,7 @@ export const ProductImageContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ProductContentContainer = styled('div', ({ $theme }) => ({
+export const ProductContentContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -61,7 +61,7 @@ export const ProductContentContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ProductNameAndPrice = styled('div', () => ({
+export const ProductNameAndPrice = themedStyled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -69,11 +69,11 @@ export const ProductNameAndPrice = styled('div', () => ({
     gap: '1.5em',
 }));
 
-export const ProductPrice = styled(DisplaySmall, ({ $theme }) => ({
+export const ProductPrice = themedStyled(DisplaySmall, ({ $theme }) => ({
     color: $theme.colors.accent,
 }));
 
-export const ProductSizesSection = styled('div', () => ({
+export const ProductSizesSection = themedStyled('div', () => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -81,13 +81,13 @@ export const ProductSizesSection = styled('div', () => ({
     gap: '0.5em',
 }));
 
-export const ProductSizesContainer = styled('div', () => ({
+export const ProductSizesContainer = themedStyled('div', () => ({
     display: 'flex',
     width: '100%',
     gap: '.75em',
 }));
 
-export const ProductSize = styled('div', ({ $theme }) => ({
+export const ProductSize = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     placeContent: 'center',
     placeItems: 'center',
@@ -98,6 +98,6 @@ export const ProductSize = styled('div', ({ $theme }) => ({
     fontFamily: 'Poppins, sans-serif',
 }));
 
-export const ProductCTA = styled(Button, {
+export const ProductCTA = themedStyled(Button, {
     gridColumn: '1 / 3',
 });

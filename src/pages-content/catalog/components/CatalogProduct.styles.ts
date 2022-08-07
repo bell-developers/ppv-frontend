@@ -1,6 +1,6 @@
-import { styled } from 'baseui';
+import themedStyled from 'themes/utils/themedStyled';
 
-export const CatalogProductContainer = styled('div', ({ $theme }) => ({
+export const CatalogProductContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -11,7 +11,7 @@ export const CatalogProductContainer = styled('div', ({ $theme }) => ({
     cursor: 'pointer',
 }));
 
-export const CatalogProductImageContainer = styled('div', ({ $theme }) => ({
+export const CatalogProductImageContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%',
@@ -22,7 +22,7 @@ export const CatalogProductImageContainer = styled('div', ({ $theme }) => ({
     borderBottomRightRadius: $theme.borders.radius500,
 }));
 
-export const CatalogProductDataContainer = styled('div', ({ $theme }) => ({
+export const CatalogProductDataContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%',

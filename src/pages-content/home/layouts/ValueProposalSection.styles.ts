@@ -1,12 +1,13 @@
-import { styled, withStyle } from 'baseui';
+import themedStyled from 'themes/utils/themedStyled';
+import themedWithStyle from 'themes/utils/themedWithStyle';
 
-export const ValueProposalMain = styled('section', ({ $theme }) => ({
+export const ValueProposalMain = themedStyled('section', ({ $theme }) => ({
     width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
     height: 'fit-content',
     marginTop: $theme.sizing.scale950,
 }));
 
-export const ValueProposalContent = styled('div', ({ $theme }) => ({
+export const ValueProposalContent = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '1em',
@@ -18,7 +19,7 @@ export const ValueProposalContent = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ValueProposalImages = styled('div', ({ $theme }) => ({
+export const ValueProposalImages = themedStyled('div', ({ $theme }) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(9, 1fr)',
     gridTemplateRows: 'repeat(8, 1fr)',
@@ -37,7 +38,7 @@ export const ValueProposalImages = styled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalImageContainer = styled('div', ({ $theme }) => ({
+const ValueProposalImageContainer = themedStyled('div', ({ $theme }) => ({
     position: 'relative',
     width: '100%',
     height: '100%',
@@ -50,12 +51,12 @@ const ValueProposalImageContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const ValueProposalImageContainer1 = withStyle(ValueProposalImageContainer, {
+export const ValueProposalImageContainer1 = themedWithStyle(ValueProposalImageContainer, {
     gridColumn: '1 / 6',
     gridRow: '1 / 8',
 });
 
-export const ValueProposalImageContainer2 = withStyle(ValueProposalImageContainer, {
+export const ValueProposalImageContainer2 = themedWithStyle(ValueProposalImageContainer, {
     gridColumn: '5 / 10',
     gridRow: '2 / 9',
 });

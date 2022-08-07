@@ -1,7 +1,8 @@
-import { styled, withStyle } from 'baseui';
 import { Spinner } from 'baseui/spinner';
+import themedStyled from 'themes/utils/themedStyled';
+import themedWithStyle from 'themes/utils/themedWithStyle';
 
-export const CatalogBody = styled('div', ({ $theme }) => ({
+export const CatalogBody = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -20,7 +21,7 @@ export const CatalogBody = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const CatalogTitleContainer = styled('div', ({ $theme }) => ({
+export const CatalogTitleContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
@@ -30,7 +31,7 @@ export const CatalogTitleContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
+export const CatalogProductsContainer = themedStyled('div', ({ $theme }) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
     gridAutoRows: 'auto',
@@ -47,7 +48,7 @@ export const CatalogProductsContainer = styled('div', ({ $theme }) => ({
     },
 }));
 
-export const CatalogSpinner = withStyle(Spinner, ({ $theme }) => ({
+export const CatalogSpinner = themedWithStyle(Spinner, ({ $theme }) => ({
     position: 'absolute',
     top: '50%',
     left: '0',
@@ -59,7 +60,7 @@ export const CatalogSpinner = withStyle(Spinner, ({ $theme }) => ({
     height: '4em',
 }));
 
-export const CatalogErrorContainer = styled('div', ({ $theme }) => ({
+export const CatalogErrorContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

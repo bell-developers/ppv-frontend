@@ -1,6 +1,6 @@
-import { styled } from 'baseui';
+import themedStyled from 'themes/utils/themedStyled';
 
-export const BenefitsSectionContainer = styled('div', ({ $theme }) => ({
+export const BenefitsSectionContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '5rem',
@@ -9,7 +9,7 @@ export const BenefitsSectionContainer = styled('div', ({ $theme }) => ({
     marginBottom: '5rem',
 }));
 
-export const BenefitsSectionTitleContainer = styled('div', {
+export const BenefitsSectionTitleContainer = themedStyled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '1.5em',
