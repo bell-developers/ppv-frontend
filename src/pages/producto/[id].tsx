@@ -28,7 +28,7 @@ function ProductPage() {
                 <title>Producto</title>
             </Head>
             <Header />
-            {queryId === undefined ? (
+            {!isReady ? (
                 <div>Cargando...</div>
             ) : (
                 <ProductContainer>

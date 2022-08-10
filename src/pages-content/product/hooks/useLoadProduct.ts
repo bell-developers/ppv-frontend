@@ -1,6 +1,6 @@
 import adaptProduct from 'adapters/adaptProduct';
 import { Product } from 'models/Product.model';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { getProduct } from 'services/get/getProduct';
 
 type UseLoadProductReturn = {
@@ -16,9 +16,8 @@ export const useLoadProduct: UseLoadProduct = (id, isReady) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
 
-    const loadProduct = useCallback(async () => {
+    const loadProduct = async () => {
         try {
-            console.log(productData);
             setError(false);
             setLoading(true);
             setProductData(adaptProduct(await getProduct(id)));
@@ -27,13 +26,14 @@ export const useLoadProduct: UseLoadProduct = (id, isReady) => {
             setLoading(false);
             setError(true);
         }
-    }, [id, productData]);
+    };
 
     useEffect(() => {
-        if (isReady === false) return;
-        else loadProduct();
+        if (isReady === false) return () => setLoading(false);
+        loadProduct();
         return () => setLoading(false);
-    }, [isReady, loadProduct]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isReady]);
 
     return { productData, loading, error };
 };
