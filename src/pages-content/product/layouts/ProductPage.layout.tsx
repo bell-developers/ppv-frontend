@@ -21,17 +21,20 @@ export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
 
 export const ProductContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
+    flexDirection: 'column',
     width: '100%',
-    maxWidth: '1250px',
+    maxWidth: `min(${$theme.custom.pageMaxWidth}, 100%)`,
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
     boxSizing: 'border-box',
+    [$theme.mediaQuery.large]: {
+        flexDirection: 'row',
+        width: '100%',
+    },
     [$theme.mediaQuery.medium]: {
-        flexDirection: 'column',
         width: '60vw',
     },
     [$theme.mediaQuery.small]: {
-        flexDirection: 'column',
         width: '100%',
     },
 }));
@@ -41,11 +44,12 @@ export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     aspectRatio: '1 / 1',
     backgroundColor: $theme.colors.backgroundInverseSecondary,
     borderTopLeftRadius: $theme.borders.radius500,
-    borderBottomLeftRadius: $theme.borders.radius500,
-    [$theme.mediaQuery.medium]: {
+    borderTopRightRadius: $theme.borders.radius500,
+    borderBottomLeftRadius: 0,
+    [$theme.mediaQuery.large]: {
         borderTopLeftRadius: $theme.borders.radius500,
-        borderTopRightRadius: $theme.borders.radius500,
-        borderBottomLeftRadius: 0,
+        borderTopRightRadius: 0,
+        borderBottomLeftRadius: $theme.borders.radius500,
     },
 }));
 
@@ -54,6 +58,7 @@ export const ProductContentContainer = themedStyled('div', ({ $theme }) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     width: '100%',
+    minHeight: 'fit-content',
     padding: '1.5em',
     boxSizing: 'border-box',
     [$theme.mediaQuery.medium]: {
