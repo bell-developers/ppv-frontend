@@ -50,32 +50,12 @@ export const CatalogProductsContainer = themedStyled('div', ({ $theme }) => ({
     },
 }));
 
-export const CatalogSpinner = themedWithStyle(Spinner, ({ $theme }) => ({
+export const CatalogSpinnerContainer = themedStyled('div', {
     position: 'absolute',
     top: '50%',
-    left: '0',
-    right: '0',
-    transform: 'translateY(-50%)',
-    margin: '0 auto',
-    borderTopColor: $theme.colors.primary,
-    width: '4em',
-    height: '4em',
-}));
-
-export const CatalogErrorContainer = themedStyled('div', ({ $theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1em',
-    position: 'absolute',
-    top: '50%',
-    left: '0',
-    right: '0',
-    margin: '0 auto',
-    maxWidth: $theme.custom.pageMaxWidth,
-    transform: 'translateY(-50%)',
-    textAlign: 'center',
-}));
+    left: '50%',
+    transform: 'translateY(-50%) translateX(-50%)',
+});
 
 export const CatalogErrorMessageStyles = (theme: CustomTheme): StyleObject => ({
     display: 'flex',

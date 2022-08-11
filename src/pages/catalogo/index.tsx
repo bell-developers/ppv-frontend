@@ -6,12 +6,13 @@ import {
     CatalogBody,
     CatalogErrorMessageStyles,
     CatalogProductsContainer,
-    CatalogSpinner,
+    CatalogSpinnerContainer,
     CatalogTitleContainer,
 } from 'pages-content/catalog/layouts/Catalog.layouts';
 import Head from 'next/head';
 import { useLoadCatalog } from 'pages-content/catalog/hooks/useLoadCatalog';
 import ErrorMessage from 'components/error-message/ErrorMessage';
+import CustomSpinner from 'components/custom-spinner/CustomSpinner';
 
 const CatalogPage: NextPage = () => {
     const { loading, productsData, error } = useLoadCatalog();
@@ -29,7 +30,11 @@ const CatalogPage: NextPage = () => {
                 {error === true && (
                     <ErrorMessage containerStyles={CatalogErrorMessageStyles} />
                 )}
-                {loading === true && <CatalogSpinner />}
+                {loading === true && (
+                    <CatalogSpinnerContainer>
+                        <CustomSpinner />
+                    </CatalogSpinnerContainer>
+                )}
                 {productsData &&
                     productsData.map(productData => (
                         <CatalogProduct key={productData.id} productData={productData} />
