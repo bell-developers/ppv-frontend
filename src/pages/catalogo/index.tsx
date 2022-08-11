@@ -1,22 +1,20 @@
-import { DisplaySmall, LabelLarge } from 'baseui/typography';
+import { DisplaySmall } from 'baseui/typography';
 import Header from 'components/header/Header';
 import { NextPage } from 'next';
 import { CatalogProduct } from 'pages-content/catalog/components/CatalogProduct.component';
 import {
     CatalogBody,
-    CatalogErrorContainer,
+    CatalogErrorMessageStyles,
     CatalogProductsContainer,
     CatalogSpinner,
     CatalogTitleContainer,
 } from 'pages-content/catalog/layouts/Catalog.layouts';
 import Head from 'next/head';
 import { useLoadCatalog } from 'pages-content/catalog/hooks/useLoadCatalog';
-import { Alert } from 'baseui/icon';
-import { useStyletron } from 'baseui';
+import ErrorMessage from 'components/error-message/ErrorMessage';
 
 const CatalogPage: NextPage = () => {
     const { loading, productsData, error } = useLoadCatalog();
-    const [, theme] = useStyletron();
 
     return (
         <CatalogBody>
@@ -29,12 +27,7 @@ const CatalogPage: NextPage = () => {
             </CatalogTitleContainer>
             <CatalogProductsContainer>
                 {error === true && (
-                    <CatalogErrorContainer>
-                        <Alert color={theme.colors.negative} size={64} />
-                        <LabelLarge>
-                            Ha ocurrido un error. <br /> Por favor, recarge la página.
-                        </LabelLarge>
-                    </CatalogErrorContainer>
+                    <ErrorMessage containerStyles={CatalogErrorMessageStyles} />
                 )}
                 {loading === true && <CatalogSpinner />}
                 {productsData &&

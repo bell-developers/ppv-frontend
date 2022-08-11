@@ -1,4 +1,6 @@
 import { Spinner } from 'baseui/spinner';
+import { StyleObject } from 'styletron-standard';
+import { CustomTheme } from 'themes/CustomTheme.type';
 import themedStyled from 'themes/utils/themedStyled';
 import themedWithStyle from 'themes/utils/themedWithStyle';
 
@@ -74,3 +76,17 @@ export const CatalogErrorContainer = themedStyled('div', ({ $theme }) => ({
     transform: 'translateY(-50%)',
     textAlign: 'center',
 }));
+
+export const CatalogErrorMessageStyles = (theme: CustomTheme): StyleObject => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1em',
+    position: 'absolute',
+    top: '50%',
+    left: '0',
+    right: '0',
+    margin: '0 auto',
+    maxWidth: theme.custom.pageMaxWidth,
+    transform: 'translateY(-50%)',
+});
