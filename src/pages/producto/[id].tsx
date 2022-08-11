@@ -1,7 +1,10 @@
-import { HeadingLarge, LabelMedium } from 'baseui/typography';
+import { Alert } from 'baseui/icon';
+import { HeadingLarge, LabelLarge, LabelMedium } from 'baseui/typography';
+import ErrorMessage from 'components/error-message/ErrorMessage';
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { CatalogSpinner } from 'pages-content/catalog/layouts/Catalog.layouts';
 import { useLoadProduct } from 'pages-content/product/hooks/useLoadProduct';
 import {
     ProductContainer,
@@ -19,7 +22,7 @@ import {
 function ProductPage() {
     const { query, isReady } = useRouter();
     const queryId = Array.isArray(query.id) ? query.id[0] : query.id;
-    const { productData } = useLoadProduct(queryId, isReady);
+    const { productData, loading, error } = useLoadProduct(queryId, isReady);
     const sizes = ['S', 'M', 'L'];
 
     return (
@@ -28,9 +31,11 @@ function ProductPage() {
                 <title>Producto</title>
             </Head>
             <Header />
-            {!isReady ? (
-                <div>Cargando...</div>
-            ) : (
+            {error === true && (
+                <ErrorMessage containerStyles={() => ({ marginTop: '5rem' })} />
+            )}
+            {loading && <CatalogSpinner />}
+            {productData && (
                 <ProductContainer>
                     <ProductImageContainer></ProductImageContainer>
                     <ProductContentContainer>
