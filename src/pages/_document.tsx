@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Script from 'next/script';
 import { Server, Sheet } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { styletron } from 'utils/styletron';
@@ -48,6 +49,7 @@ class MyDocument extends Document<{ stylesheets: Sheet[] }> {
                 <body>
                     <Main />
                     <NextScript />
+                    <Script src='https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js'></Script>
                 </body>
             </Html>
         );
