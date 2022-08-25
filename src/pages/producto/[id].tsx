@@ -1,10 +1,9 @@
-import { Alert } from 'baseui/icon';
-import { HeadingLarge, LabelLarge, LabelMedium } from 'baseui/typography';
+import { HeadingLarge, LabelMedium } from 'baseui/typography';
+import CustomSpinner from 'components/custom-spinner/CustomSpinner';
 import ErrorMessage from 'components/error-message/ErrorMessage';
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { CatalogSpinner } from 'pages-content/catalog/layouts/Catalog.layouts';
 import { useLoadProduct } from 'pages-content/product/hooks/useLoadProduct';
 import {
     ProductContainer,
@@ -34,7 +33,7 @@ function ProductPage() {
             {error === true && (
                 <ErrorMessage containerStyles={() => ({ marginTop: '5rem' })} />
             )}
-            {loading && <CatalogSpinner />}
+            {loading && <CustomSpinner />}
             {productData && (
                 <ProductContainer>
                     <ProductImageContainer></ProductImageContainer>
