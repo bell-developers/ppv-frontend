@@ -1,10 +1,16 @@
 import { Product } from 'models/Product.model';
+import { Adapter } from './Adapter.type';
 
-const adaptImage = (image: string) => 'data:image/jpg;base64,' + image.slice(2, -1);
+// Waiting API implements images
+// const adaptImage = (image: string) => 'data:image/jpg;base64,' + image.slice(2, -1);
 
-const adaptProduct = (data: Product): Product => ({
+/**
+ * Adapts getProduct service return.
+ *
+ * @see Adapter for more info about using adapters.
+ */
+const adaptProduct: Adapter<Product, Product> = data => ({
     ...data,
-    // images: data.images.map(adaptImage),
 });
 
 export default adaptProduct;
