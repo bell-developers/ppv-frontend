@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Producción de Páginas de Venta - Tienda Web
 
-## Getting Started
+## Comenzar a desarrollar
 
-First, run the development server:
+Este proyecto de [Next.js](https://nextjs.org/) fue iniciado con la herramienta [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Para iniciar el servidor de desarrollo, utilizar el comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El servidor se iniciará en: [http://localhost:3000](http://localhost:3000).
+Al realizar cambios en el código, el servidor se reinicia automáticamente y los cambios son aplicados.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Documentación
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+El proyecto cuenta con algunas reglas sobre cómo modificar el código, agregar cosas nuevas y cómo organizarlas.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Arquitectura de carpetas
 
-## Learn More
+La aplicación cuenta con una organización de carpetas ya definida. La cual consiste en:
 
-To learn more about Next.js, take a look at the following resources:
+-   **src**: se encuentra única y exclusivamente todo el código de la aplicación.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Las siguientes carpetas se encuentran dentro de src:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   **services**: se encuentran las funciones que realizan el consumo de servicios, por ejemplo un REST API. A su vez esta carpeta está separada en subcarpetas clasificadas por el tipo de servicio, por ejemplo el servicio getCatalog se encuentra dentro de /get.
+-   **adapters**: se encuentran las funciones que adaptan los datos obtenidos de servicios externos. Esto se realiza para que esta diferencia entre datos externos y datos de la aplicación no genere problemas y el formato de los datos en la aplicación se mantengan consistentes.
+-   **components**: se encuentran los componentes de la aplicación los cuales son reutilizables en más de una página, por ejemplo el Header o el ErrorMessage.
+    Cada componente tiene su carpeta y archivo principal con su respectivo nombre. Además puede tener un archivo de estilos el cual tendrá el nombre del componente seguido de un .styles.
+    Por ejemplo: el componente Header se encuentra dentro de components/header/Header.tsx y posee su archivo de estilos Header.styles.ts.
+-   **models**: se encuentran los modelos que se utilizan en la aplicación. Normalmente son archivos que exportan uno o más tipos que representan una entidad en la aplicación. Por ejemplo: el modelo Product. Cada archivo debe contener su nombre y la extensión .model.ts
+-   **styles**: se encuentran los estilos base de la aplicación y resets.
+-   **utils**: se encuentran aquellas funciones y variables que se puedan reutilizar y su lógica no pertenezca a ninguna sección concreta de la aplicación.
+-   **pages-content:** se encuentran los componentes, layouts y hooks que componen a las páginas.
+    Dentro de _pages-content_ debe existir una carpeta para cada página, el nombre de esta tiene que ser el mismo que en el de _pages_ (se permite la traducción a inglés del nombre). Por ejemplo si existe un archivo pages/index.tsx, se debe crear una carpeta
+    pages-content/home y se debe volcar todo el contenido de la página de inicio dentro de la misma.
+    Cada carpeta de página puede contener una carpeta:
+    -   **layouts:** donde se encontrarían los styled-components que construyen la estructura de la misma y no son reutilizados. Por ejemplo el contenedor Main de una página.
+    -   **components:** donde se encontrarían los componentes que posean lógica propia y su implementación requiera algo más que solo estilos. Estos componentes
+-   **pages**: se encuentran las rutas de la aplicación. Esta carpeta se reserva exclusivamente para el enrutamiento que NextJS ofrece, no se debe insertar ningun archivo que no pertenezca a la página misma dentro de esta carpeta.
+    Los archivos que se encuentran dentro de carpeta _pages_ solo deben estructurar la página y aplicar su lógica, usando los estilos, funciones y hooks de _pages-layout_. Es posible realizar distintas secciones por página, esto depende de cual forma sea más legible.
