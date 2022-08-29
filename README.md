@@ -1,5 +1,9 @@
 # Producción de Páginas de Venta - Tienda Web
 
+Producción de Páginas de Venta es un proyecto hecho con el fin de eficientar el desarollo de tiendas online para emprendimientos. Este repositorio contiene la plantilla de la aplicación web, de la cual se crearán ejemplares personalizados para negocios reales.
+
+La tienda está desarrollada con: [Next.js](https://nextjs.org/), el framework por excelencia de React; [Typescript](https://www.typescriptlang.org/), una extensión de JavaScript que agrega tipos; y [BaseWeb](https://baseweb.design/), un UI framework de React que contiene estilos y componentes listos para usar.
+
 ## Comenzar a desarrollar
 
 Este proyecto de [Next.js](https://nextjs.org/) fue iniciado con la herramienta [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
