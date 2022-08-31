@@ -1,8 +1,6 @@
-import { Spinner } from 'baseui/spinner';
 import { StyleObject } from 'styletron-standard';
 import { CustomTheme } from 'themes/CustomTheme.type';
 import themedStyled from 'themes/utils/themedStyled';
-import themedWithStyle from 'themes/utils/themedWithStyle';
 
 export const CatalogBody = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
@@ -25,11 +23,11 @@ export const CatalogBody = themedStyled('div', ({ $theme }) => ({
 
 export const CatalogTitleContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
-    justifyContent: 'space-between',
     width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
     color: $theme.colors.contentPrimary,
-    [$theme.mediaQuery.small]: {
-        justifyContent: 'center',
+    justifyContent: 'center',
+    [$theme.mediaQuery.large]: {
+        justifyContent: 'space-between',
     },
 }));
 
