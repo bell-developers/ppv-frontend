@@ -8,6 +8,8 @@ type HeaderProps = {
 };
 
 const Header = (props: HeaderProps) => (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
     <HeaderNavigation
         overrides={{
             Root: {
@@ -17,6 +19,17 @@ const Header = (props: HeaderProps) => (
                     width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
                     zIndex: 10,
                     borderBottomColor: $theme.borders.border200.borderColor,
+                    boxSizing: 'border-box',
+                    paddingRight: '1rem',
+                    paddingLeft: '1rem',
+                    [$theme.mediaQuery.large]: {
+                        paddingRight: '0',
+                        paddingLeft: '0',
+                    },
+                    [$theme.mediaQuery.medium]: {
+                        paddingRight: '15vw',
+                        paddingLeft: '15vw',
+                    },
                     ':before':
                         props.fullWidth === true
                             ? {
