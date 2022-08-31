@@ -1,4 +1,5 @@
 import { DarkTheme } from 'baseui';
+import { CustomTheme } from './CustomTheme.type';
 
 const primitives = {
     primaryFontFamily: 'Inter',
@@ -12,18 +13,15 @@ const overrides = {
     },
 };
 
-const custom: CustomThemeProperties = {
+const custom: Partial<CustomTheme['custom']> = {
     pageMaxWidth: '850px',
+    mainLayoutWidth: `min(850px, 100%)`,
 };
 
 const BaseThemeProperties = {
     primitives,
     overrides,
     custom,
-};
-
-export type CustomThemeProperties = {
-    pageMaxWidth: string;
 };
 
 export default BaseThemeProperties;
