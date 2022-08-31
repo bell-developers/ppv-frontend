@@ -22,8 +22,7 @@ export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
 export const ProductContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    width: '100%',
-    maxWidth: `min(${$theme.custom.pageMaxWidth}, 100%)`,
+    width: $theme.custom.mainLayoutWidth,
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
     boxSizing: 'border-box',

@@ -4,7 +4,7 @@ export const BenefitsSectionContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '5rem',
-    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
+    width: $theme.custom.mainLayoutWidth,
     marginTop: '12vh',
     marginBottom: '5rem',
     padding: '0 1em',

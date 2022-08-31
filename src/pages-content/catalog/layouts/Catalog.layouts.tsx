@@ -23,7 +23,7 @@ export const CatalogBody = themedStyled('div', ({ $theme }) => ({
 
 export const CatalogTitleContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
-    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
+    width: $theme.custom.mainLayoutWidth,
     color: $theme.colors.contentPrimary,
     justifyContent: 'center',
     [$theme.mediaQuery.large]: {
