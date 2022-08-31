@@ -1,7 +1,7 @@
 import { DarkTheme } from 'baseui';
 
 const primitives = {
-    primaryFontFamily: 'Poppins',
+    primaryFontFamily: 'Inter',
 };
 
 const overrides = {
