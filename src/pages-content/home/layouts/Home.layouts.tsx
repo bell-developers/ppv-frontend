@@ -6,15 +6,5 @@ export const HomeBody = themedStyled('div', ({ $theme }) => ({
     alignItems: 'center',
     maxWidth: '100vw',
     minHeight: '100vh',
-    padding: '0 1em',
     backgroundColor: $theme.colors.backgroundPrimary,
-    [$theme.mediaQuery.large]: {
-        padding: '0 0',
-    },
-    [$theme.mediaQuery.medium]: {
-        padding: '0 15vw',
-    },
-    [$theme.mediaQuery.small]: {
-        padding: '0 1em',
-    },
 }));
