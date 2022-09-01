@@ -1,4 +1,3 @@
-import { useStyletron } from 'baseui';
 import { Button } from 'baseui/button';
 import { Grid, ALIGNMENT, Cell } from 'baseui/layout-grid';
 import { DisplayMedium, HeadingXSmall } from 'baseui/typography';
@@ -11,9 +10,10 @@ import {
     ValueProposalImages,
     ValueProposalMain,
 } from './ValueProposalSection.styles';
+import themedUseStyletron from 'themes/utils/themedUseStyletron';
 
 export const ValueProposalLayout = () => {
-    const [css, theme] = useStyletron();
+    const [css, theme] = themedUseStyletron();
 
     return (
         <ValueProposalMain>
@@ -25,13 +25,13 @@ export const ValueProposalLayout = () => {
                                 fontSize: 'clamp(3.25rem, 3.90vw, 4rem)',
                             }}
                         >
-                            Ropa urbana
+                            Pura Serendipia
                         </DisplayMedium>
                         <HeadingXSmall color={theme.colors.contentSecondary}>
-                            En nuestra tienda te ofrecemos ropa a los mejores precios.
+                            Accesorios en acero quirúrgico
                         </HeadingXSmall>
                         <Link href='/catalogo'>
-                            <Button>Ver ropa</Button>
+                            <Button>Ver accesorios</Button>
                         </Link>
                     </ValueProposalContent>
                 </Cell>
