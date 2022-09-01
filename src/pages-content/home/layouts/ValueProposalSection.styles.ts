@@ -2,9 +2,17 @@ import themedStyled from 'themes/utils/themedStyled';
 import themedWithStyle from 'themes/utils/themedWithStyle';
 
 export const ValueProposalMain = themedStyled('section', ({ $theme }) => ({
-    width: `min(${$theme.custom.pageMaxWidth}, 100%)`,
+    width: $theme.custom.mainLayoutWidth,
     height: 'fit-content',
     marginTop: $theme.sizing.scale950,
+    padding: '0 1em',
+    boxSizing: 'border-box',
+    [$theme.mediaQuery.large]: {
+        padding: '0 0',
+    },
+    [$theme.mediaQuery.medium]: {
+        padding: '0 15vw',
+    },
 }));
 
 export const ValueProposalContent = themedStyled('div', ({ $theme }) => ({
