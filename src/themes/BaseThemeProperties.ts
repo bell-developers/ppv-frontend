@@ -13,7 +13,7 @@ const overrides = {
     },
 };
 
-const custom: Partial<CustomTheme['custom']> = {
+const custom: CustomTheme['custom'] = {
     pageMaxWidth: '850px',
     mainLayoutWidth: `min(850px, 100%)`,
 };
