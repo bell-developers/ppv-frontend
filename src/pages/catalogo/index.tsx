@@ -25,7 +25,7 @@ const CatalogPage: NextPage = () => {
             </Head>
             <Header fullWidth={true} />
             <CatalogTitleContainer>
-                <DisplaySmall>Catálogo</DisplaySmall>
+                <DisplaySmall $style={{ fontWeight: '700' }}>Catálogo</DisplaySmall>
             </CatalogTitleContainer>
             <CatalogProductsContainer>
                 {error === true && (
