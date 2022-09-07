@@ -13,6 +13,7 @@ import Head from 'next/head';
 import { useLoadCatalog } from 'pages-content/catalog/hooks/useLoadCatalog';
 import ErrorMessage from 'components/error-message/ErrorMessage';
 import CustomSpinner from 'components/custom-spinner/CustomSpinner';
+import Footer from 'components/footer/Footer';
 
 const CatalogPage: NextPage = () => {
     const { loading, productsData, error } = useLoadCatalog();
@@ -40,6 +41,7 @@ const CatalogPage: NextPage = () => {
                         <CatalogProduct key={productData.id} productData={productData} />
                     ))}
             </CatalogProductsContainer>
+            <Footer />
         </CatalogBody>
     );
 };

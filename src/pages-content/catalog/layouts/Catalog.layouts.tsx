@@ -9,14 +9,9 @@ export const CatalogBody = themedStyled('div', ({ $theme }) => ({
     gap: '3.5em',
     maxWidth: '100vw',
     minHeight: '100vh',
-    padding: '0 1em 3.5em 1em',
     fontSize: 'clamp(16px, 1.2vw, 24px)',
     backgroundColor: $theme.colors.backgroundPrimary,
-    [$theme.mediaQuery.medium]: {
-        padding: '0 4em 3.5em 4em',
-    },
     [$theme.mediaQuery.small]: {
-        padding: '0 1em 3.5em 1em',
         gap: '2.5em',
     },
 }));
@@ -26,8 +21,18 @@ export const CatalogTitleContainer = themedStyled('div', ({ $theme }) => ({
     width: $theme.custom.mainLayoutWidth,
     color: $theme.colors.contentPrimary,
     justifyContent: 'center',
+    paddingBlock: '3.5rem',
+    boxSizing: 'border-box',
     [$theme.mediaQuery.large]: {
         justifyContent: 'space-between',
+        padding: '0',
+    },
+    [$theme.mediaQuery.medium]: {
+        padding: '0 4em 3.5em 4em',
+    },
+    [$theme.mediaQuery.small]: {
+        padding: '0 1em 3.5em 1em',
+        gap: '2.5em',
     },
 }));
 
@@ -37,14 +42,13 @@ export const CatalogProductsContainer = themedStyled('div', ({ $theme }) => ({
     gridAutoRows: 'auto',
     gap: '2em',
     width: `100%`,
+    minHeight: '50vh',
     boxSizing: 'border-box',
+    padding: '0 1em',
     [$theme.mediaQuery.large]: {
         gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
         padding: 0,
         width: `min(1000px, 80%)`,
-    },
-    [$theme.mediaQuery.small]: {
-        padding: '0 1em',
     },
 }));
 
