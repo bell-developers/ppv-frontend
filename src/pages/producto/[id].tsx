@@ -1,6 +1,7 @@
 import { HeadingLarge, LabelMedium } from 'baseui/typography';
 import CustomSpinner from 'components/custom-spinner/CustomSpinner';
 import ErrorMessage from 'components/error-message/ErrorMessage';
+import Footer from 'components/footer/Footer';
 import Header from 'components/header/Header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -9,6 +10,7 @@ import {
     ProductContainer,
     ProductContentContainer,
     ProductCTA,
+    ProductErrorMessageContainer,
     ProductImageContainer,
     ProductNameAndPrice,
     ProductPageBody,
@@ -16,6 +18,7 @@ import {
     ProductSize,
     ProductSizesContainer,
     ProductSizesSection,
+    ProductSpinnerContainer,
 } from 'pages-content/product/layouts/ProductPage.layout';
 
 function ProductPage() {
@@ -31,9 +34,13 @@ function ProductPage() {
             </Head>
             <Header />
             {error === true && (
-                <ErrorMessage containerStyles={() => ({ marginTop: '5rem' })} />
+                <ErrorMessage containerStyles={() => ProductErrorMessageContainer} />
             )}
-            {loading && <CustomSpinner />}
+            {loading && (
+                <ProductSpinnerContainer>
+                    <CustomSpinner />
+                </ProductSpinnerContainer>
+            )}
             {productData && (
                 <ProductContainer>
                     <ProductImageContainer></ProductImageContainer>
@@ -54,6 +61,7 @@ function ProductPage() {
                     </ProductContentContainer>
                 </ProductContainer>
             )}
+            <Footer />
         </ProductPageBody>
     );
 }

@@ -42,7 +42,7 @@ export const CatalogProductsContainer = themedStyled('div', ({ $theme }) => ({
     gridAutoRows: 'auto',
     gap: '2em',
     width: `100%`,
-    minHeight: '50vh',
+    minHeight: '55vh',
     boxSizing: 'border-box',
     padding: '0 1em',
     [$theme.mediaQuery.large]: {

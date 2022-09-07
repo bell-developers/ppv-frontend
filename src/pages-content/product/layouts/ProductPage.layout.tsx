@@ -1,5 +1,6 @@
 import { Button } from 'baseui/button';
 import { DisplaySmall } from 'baseui/typography';
+import { StyleObject } from 'styletron-standard';
 import themedStyled from 'themes/utils/themedStyled';
 
 export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
@@ -28,6 +29,23 @@ export const ProductContainer = themedStyled('div', ({ $theme }) => ({
         width: $theme.custom.mainLayoutWidth,
     },
 }));
+
+export const ProductMessagesContainerStyles: Partial<StyleObject> = {
+    minHeight: '70vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+};
+
+export const ProductErrorMessageContainer = {
+    ...ProductMessagesContainerStyles,
+};
+
+export const ProductSpinnerContainer = themedStyled(
+    'div',
+    ProductMessagesContainerStyles
+);
 
 export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     width: '100%',
