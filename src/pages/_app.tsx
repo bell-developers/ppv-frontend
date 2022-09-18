@@ -4,14 +4,36 @@ import { Provider } from 'styletron-react';
 import { BaseProvider } from 'baseui';
 import { styletron } from 'utils/styletron';
 import { CustomLightTheme } from 'themes/CustomLightTheme';
+import { createContext, useState } from 'react';
+import { CustomDarkTheme } from 'themes/CustomDarkTheme';
+
+type CurrentTheme = {
+    id: string;
+    setCurrentTheme?: (id: string) => () => void;
+};
+
+export const CurrentThemeContext = createContext<CurrentTheme>({ id: 'default' });
+
+const themes = {
+    'default-light': CustomLightTheme,
+    'default-dark': CustomDarkTheme,
+};
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+    const setTheme = (id: string) => setCurrentTheme({ id, setCurrentTheme: setTheme });
+    const [CurrentTheme, setCurrentTheme] = useState<CurrentTheme>({
+        id: 'default-light',
+        setCurrentTheme: setTheme,
+    });
+
     return (
         <Provider value={styletron}>
             {/* Pass your theme in theme props */}
-            <BaseProvider theme={CustomLightTheme}>
-                <Component {...pageProps} />
-            </BaseProvider>
+            <CurrentThemeContext.Provider value={CurrentTheme}>
+                <BaseProvider theme={themes[CurrentTheme.id]}>
+                    <Component {...pageProps} />
+                </BaseProvider>
+            </CurrentThemeContext.Provider>
         </Provider>
     );
 }
