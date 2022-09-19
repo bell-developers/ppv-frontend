@@ -23,6 +23,7 @@ export const ValueProposalLayout = () => {
                         <DisplayMedium
                             $style={{
                                 fontSize: 'clamp(3.25rem, 3.90vw, 4rem)',
+                                fontWeight: '700',
                             }}
                         >
                             Pura Serendipia

@@ -1,21 +1,17 @@
 import { Button } from 'baseui/button';
 import { DisplaySmall } from 'baseui/typography';
+import { StyleObject } from 'styletron-standard';
 import themedStyled from 'themes/utils/themedStyled';
 
 export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    padding: '0 10em 1em 10em',
     minHeight: '100vh',
     boxSizing: 'border-box',
-    fontSize: 'clamp(12px, 1.2vw, 20px)',
+    backgroundColor: $theme.colors.backgroundPrimary,
     gap: '2.5em',
     [$theme.mediaQuery.medium]: {
-        padding: '0 13vw',
         alignItems: 'center',
-    },
-    [$theme.mediaQuery.small]: {
-        padding: '0 1em',
     },
 }));
 
@@ -26,17 +22,31 @@ export const ProductContainer = themedStyled('div', ({ $theme }) => ({
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
     boxSizing: 'border-box',
-    [$theme.mediaQuery.large]: {
-        flexDirection: 'row',
-        width: '100%',
-    },
     [$theme.mediaQuery.medium]: {
         width: '60vw',
     },
-    [$theme.mediaQuery.small]: {
-        width: '100%',
+    '@media (min-width: 850px)': {
+        flexDirection: 'row',
+        width: $theme.custom.mainLayoutWidth,
     },
 }));
+
+export const ProductMessagesContainerStyles: Partial<StyleObject> = {
+    minHeight: '70vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+};
+
+export const ProductErrorMessageContainer = {
+    ...ProductMessagesContainerStyles,
+};
+
+export const ProductSpinnerContainer = themedStyled(
+    'div',
+    ProductMessagesContainerStyles
+);
 
 export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     width: '100%',
@@ -45,7 +55,7 @@ export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     borderTopLeftRadius: $theme.borders.radius500,
     borderTopRightRadius: $theme.borders.radius500,
     borderBottomLeftRadius: 0,
-    [$theme.mediaQuery.large]: {
+    '@media (min-width: 850px)': {
         borderTopLeftRadius: $theme.borders.radius500,
         borderTopRightRadius: 0,
         borderBottomLeftRadius: $theme.borders.radius500,
