@@ -19,6 +19,7 @@ type HeaderProps = {
 const ThemesMenuItems = [
     { label: 'Claro', id: 'default-light' },
     { label: 'Oscuro', id: 'default-dark' },
+    { label: 'Pura Serendipia', id: 'pura-serendipia' },
 ];
 
 const Header = (props: HeaderProps) => {

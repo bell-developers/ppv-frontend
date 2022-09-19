@@ -6,6 +6,7 @@ import { styletron } from 'utils/styletron';
 import { CustomLightTheme } from 'themes/CustomLightTheme';
 import { createContext, useState } from 'react';
 import { CustomDarkTheme } from 'themes/CustomDarkTheme';
+import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 
 type CurrentTheme = {
     id: string;
@@ -17,6 +18,7 @@ export const CurrentThemeContext = createContext<CurrentTheme>({ id: 'default' }
 const themes = {
     'default-light': CustomLightTheme,
     'default-dark': CustomDarkTheme,
+    'pura-serendipia': PuraSerendipiaLightTheme,
 };
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
