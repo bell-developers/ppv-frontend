@@ -8,6 +8,7 @@ export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
     flexDirection: 'column',
     minHeight: '100vh',
     boxSizing: 'border-box',
+    backgroundColor: $theme.colors.backgroundPrimary,
     gap: '2.5em',
     [$theme.mediaQuery.medium]: {
         alignItems: 'center',
