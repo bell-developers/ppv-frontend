@@ -46,16 +46,14 @@ export const ValueProposalImages = themedStyled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalImageContainer = themedStyled('div', ({ $theme }) => ({
+const ValueProposalImageContainer = themedStyled('div', () => ({
     position: 'relative',
-    width: '100%',
+    width: '90%',
     height: '100%',
-    backgroundColor: $theme.colors.backgroundSecondary,
-    borderRadius: $theme.borders.radius400,
-    aspectRatio: '1.3 / 1.7',
+    aspectRatio: '1 / 1',
     transition: 'transform .3s ease',
     ':hover': {
-        transform: 'scale(1.1)',
+        transform: 'scale(1.05)',
     },
 }));
 

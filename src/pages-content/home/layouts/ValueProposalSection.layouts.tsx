@@ -37,7 +37,7 @@ export const ValueProposalLayout = () => {
                     </ValueProposalContent>
                 </Cell>
                 <Cell span={[4, 8, 6]} align={ALIGNMENT.end}>
-                    <ValueProposalImages>
+                    {/* <ValueProposalImages>
                         <ValueProposalImageContainer1>
                             <Image
                                 src='/girl1.jpg'
@@ -60,7 +60,14 @@ export const ValueProposalLayout = () => {
                                 })}
                             />
                         </ValueProposalImageContainer2>
-                    </ValueProposalImages>
+                    </ValueProposalImages> */}
+                    <ValueProposalImageContainer1>
+                        <Image
+                            src='/isotype2-primary.png'
+                            alt='Pura Serendipia'
+                            layout='fill'
+                        />
+                    </ValueProposalImageContainer1>
                 </Cell>
             </Grid>
         </ValueProposalMain>

@@ -24,7 +24,7 @@ const themes = {
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     const setTheme = (id: string) => setCurrentTheme({ id, setCurrentTheme: setTheme });
     const [CurrentTheme, setCurrentTheme] = useState<CurrentTheme>({
-        id: 'default-light',
+        id: 'pura-serendipia',
         setCurrentTheme: setTheme,
     });
 
