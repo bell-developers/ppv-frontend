@@ -6,14 +6,21 @@ import Image from 'next/image';
 import {
     ValueProposalContent,
     ValueProposalImageContainer1,
-    ValueProposalImageContainer2,
-    ValueProposalImages,
     ValueProposalMain,
 } from './ValueProposalSection.styles';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
+import { useContext } from 'react';
+import { CurrentThemeContext } from 'pages/_app';
+
+const imagesSrc = {
+    'default-light': '/isotype2-black.png',
+    'default-dark': '/isotype2-white.png',
+    'pura-serendipia': '/isotype2-primary.png',
+};
 
 export const ValueProposalLayout = () => {
-    const [css, theme] = themedUseStyletron();
+    const currentTheme = useContext(CurrentThemeContext);
+    const [, theme] = themedUseStyletron();
 
     return (
         <ValueProposalMain>
@@ -63,7 +70,7 @@ export const ValueProposalLayout = () => {
                     </ValueProposalImages> */}
                     <ValueProposalImageContainer1>
                         <Image
-                            src='/isotype2-primary.png'
+                            src={imagesSrc[currentTheme.id]}
                             alt='Pura Serendipia'
                             layout='fill'
                         />

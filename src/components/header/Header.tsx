@@ -70,7 +70,7 @@ const Header = (props: HeaderProps) => {
             <StyledNavigationList $align={ALIGN.left}>
                 <CustomHomeLogo>
                     <Link href='/'>
-                        <LabelLarge as='p'>Bell</LabelLarge>
+                        <LabelLarge as='p'>Pura Serendipia</LabelLarge>
                     </Link>
                 </CustomHomeLogo>
             </StyledNavigationList>

@@ -4,7 +4,7 @@ import { Provider } from 'styletron-react';
 import { BaseProvider } from 'baseui';
 import { styletron } from 'utils/styletron';
 import { CustomLightTheme } from 'themes/CustomLightTheme';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { CustomDarkTheme } from 'themes/CustomDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 
@@ -22,11 +22,19 @@ const themes = {
 };
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-    const setTheme = (id: string) => setCurrentTheme({ id, setCurrentTheme: setTheme });
+    const setTheme = (id: string) => {
+        localStorage.setItem('theme-id', id);
+        return setCurrentTheme({ id, setCurrentTheme: setTheme });
+    };
     const [CurrentTheme, setCurrentTheme] = useState<CurrentTheme>({
         id: 'pura-serendipia',
         setCurrentTheme: setTheme,
     });
+
+    useEffect(() => {
+        setTheme(localStorage.getItem('theme-id'));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <Provider value={styletron}>
