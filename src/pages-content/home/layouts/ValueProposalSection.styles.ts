@@ -46,12 +46,15 @@ export const ValueProposalImages = themedStyled('div', ({ $theme }) => ({
     },
 }));
 
-const ValueProposalImageContainer = themedStyled('div', () => ({
+const ValueProposalImageContainer = themedStyled('div', ({ $theme }) => ({
     position: 'relative',
-    width: '90%',
+    width: '100%',
     height: '100%',
     aspectRatio: '1 / 1',
     transition: 'transform .3s ease',
+    [$theme.mediaQuery.large]: {
+        width: '90%',
+    },
     ':hover': {
         transform: 'scale(1.05)',
     },
@@ -60,6 +63,7 @@ const ValueProposalImageContainer = themedStyled('div', () => ({
 export const ValueProposalImageContainer1 = themedWithStyle(ValueProposalImageContainer, {
     gridColumn: '1 / 6',
     gridRow: '1 / 8',
+    justifySelf: 'center',
 });
 
 export const ValueProposalImageContainer2 = themedWithStyle(ValueProposalImageContainer, {
