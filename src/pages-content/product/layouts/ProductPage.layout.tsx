@@ -55,6 +55,7 @@ export const ProductImageContainer = themedStyled('div', ({ $theme }) => ({
     borderTopLeftRadius: $theme.borders.radius500,
     borderTopRightRadius: $theme.borders.radius500,
     borderBottomLeftRadius: 0,
+    position: 'relative',
     '@media (min-width: 850px)': {
         borderTopLeftRadius: $theme.borders.radius500,
         borderTopRightRadius: 0,

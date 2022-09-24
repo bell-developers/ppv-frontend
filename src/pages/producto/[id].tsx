@@ -4,6 +4,7 @@ import ErrorMessage from 'components/error-message/ErrorMessage';
 import Footer from 'components/footer/Footer';
 import Header from 'components/header/Header';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLoadProduct } from 'pages-content/product/hooks/useLoadProduct';
 import {
@@ -20,12 +21,13 @@ import {
     ProductSizesSection,
     ProductSpinnerContainer,
 } from 'pages-content/product/layouts/ProductPage.layout';
+import themedUseStyletron from 'themes/utils/themedUseStyletron';
 
 function ProductPage() {
     const { query, isReady } = useRouter();
     const queryId = Array.isArray(query.id) ? query.id[0] : query.id;
     const { productData, loading, error } = useLoadProduct(queryId, isReady);
-    const sizes = ['S', 'M', 'L'];
+    const [css, theme] = themedUseStyletron();
 
     return (
         <ProductPageBody>
@@ -43,20 +45,39 @@ function ProductPage() {
             )}
             {productData && (
                 <ProductContainer>
-                    <ProductImageContainer></ProductImageContainer>
+                    <ProductImageContainer>
+                        <Image
+                            alt={productData.name}
+                            layout='fill'
+                            src={
+                                'data:image/jpg;base64,' +
+                                productData.images[0].slice(2, -1)
+                            }
+                            className={css({
+                                borderTopLeftRadius: theme.borders.radius500,
+                                borderTopRightRadius: theme.borders.radius500,
+                                borderBottomLeftRadius: 0,
+                                '@media (min-width: 850px)': {
+                                    borderTopLeftRadius: theme.borders.radius500,
+                                    borderTopRightRadius: 0,
+                                    borderBottomLeftRadius: theme.borders.radius500,
+                                },
+                            })}
+                        />
+                    </ProductImageContainer>
                     <ProductContentContainer>
                         <ProductNameAndPrice>
                             <HeadingLarge>{productData?.name}</HeadingLarge>
                             <ProductPrice>{productData?.price}ARS</ProductPrice>
                         </ProductNameAndPrice>
-                        <ProductSizesSection>
+                        {/* <ProductSizesSection>
                             <LabelMedium>Talles</LabelMedium>
                             <ProductSizesContainer>
                                 {sizes.map(size => (
                                     <ProductSize key={size}>{size}</ProductSize>
                                 ))}
                             </ProductSizesContainer>
-                        </ProductSizesSection>
+                        </ProductSizesSection> */}
                         <ProductCTA>Comprar</ProductCTA>
                     </ProductContentContainer>
                 </ProductContainer>
