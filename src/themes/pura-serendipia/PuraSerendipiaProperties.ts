@@ -16,6 +16,8 @@ const overrides: { colors: Partial<Colors> } = {
         buttonPrimaryFill: '#933693',
         buttonPrimaryHover: '#A64CA6',
         buttonPrimaryText: '#FFFFFF',
+        buttonSecondaryFill: '#F0DBC6',
+        buttonSecondaryText: '#5B3610',
     },
 };
 
