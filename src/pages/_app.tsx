@@ -13,7 +13,9 @@ type CurrentTheme = {
     setCurrentTheme?: (id: string) => () => void;
 };
 
-export const CurrentThemeContext = createContext<CurrentTheme>({ id: 'default' });
+export const CurrentThemeContext = createContext<CurrentTheme>({
+    id: 'pura-serendipia-',
+});
 
 const themes = {
     'default-light': CustomLightTheme,
@@ -32,7 +34,10 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     });
 
     useEffect(() => {
-        setTheme(localStorage.getItem('theme-id'));
+        console.log(typeof localStorage.getItem('theme-id'));
+        const storedTheme = localStorage.getItem('theme-id');
+        if (storedTheme === 'null') setTheme('pura-serendipia');
+        else setTheme(storedTheme || 'pura-serendipia');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

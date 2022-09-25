@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
     return (
         <HomeBody>
             <Head>
-                <title>Inicio - Pura Serendipia</title>
+                <title>Inicio - Bell</title>
             </Head>
             <Header />
             <ValueProposalLayout />
