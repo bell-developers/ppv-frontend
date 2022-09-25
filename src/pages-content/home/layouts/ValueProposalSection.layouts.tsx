@@ -17,6 +17,7 @@ const imagesSrc = {
     'default-dark': '/isotype2-white.png',
     'pura-serendipia': '/isotype2-primary.png',
     greenday: '/isotype2-black.png',
+    'star-platinum': '/isotype2-black.png',
 };
 
 export const ValueProposalLayout = () => {

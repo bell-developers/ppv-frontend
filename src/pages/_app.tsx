@@ -8,6 +8,7 @@ import { createContext, useEffect, useState } from 'react';
 import { CustomDarkTheme } from 'themes/CustomDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 import { GreenDayTheme } from 'themes/greenday/GreenDayTheme';
+import { StarPlatinumTheme } from 'themes/star-platinum/StarPlatinumTheme';
 
 type CurrentTheme = {
     id: string;
@@ -15,7 +16,7 @@ type CurrentTheme = {
 };
 
 export const CurrentThemeContext = createContext<CurrentTheme>({
-    id: 'pura-serendipia-',
+    id: 'pura-serendipia',
 });
 
 const themes = {
@@ -23,6 +24,7 @@ const themes = {
     'default-dark': CustomDarkTheme,
     'pura-serendipia': PuraSerendipiaLightTheme,
     greenday: GreenDayTheme,
+    'star-platinum': StarPlatinumTheme,
 };
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
