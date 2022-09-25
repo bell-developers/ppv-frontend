@@ -20,6 +20,7 @@ const ThemesMenuItems = [
     { label: 'Claro', id: 'default-light' },
     { label: 'Oscuro', id: 'default-dark' },
     { label: 'Pura Serendipia', id: 'pura-serendipia' },
+    { label: 'Green Day', id: 'greenday' },
 ];
 
 const Header = (props: HeaderProps) => {
