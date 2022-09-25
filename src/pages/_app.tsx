@@ -7,7 +7,7 @@ import { CustomLightTheme } from 'themes/CustomLightTheme';
 import { createContext, useEffect, useState } from 'react';
 import { CustomDarkTheme } from 'themes/CustomDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
-import { GreenDayTheme } from 'themes/greenday/GreendayTheme';
+import { GreenDayTheme } from 'themes/greenday/GreenDayTheme';
 
 type CurrentTheme = {
     id: string;
