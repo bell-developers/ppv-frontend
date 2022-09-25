@@ -12,7 +12,7 @@ const overrides: { colors: Partial<Colors> } = {
         // Backgrounds
         backgroundPrimary: '#cad2c5',
         backgroundSecondary: '#AFB8AA',
-        backgroundTertiary: '#F3D1AF',
+        backgroundTertiary: '#AFB8AA',
         backgroundAccent: '#52796f',
         // Others
         buttonPrimaryFill: '#52796f',
