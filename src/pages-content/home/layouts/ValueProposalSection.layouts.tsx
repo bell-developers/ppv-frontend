@@ -6,6 +6,8 @@ import Image from 'next/image';
 import {
     ValueProposalContent,
     ValueProposalImageContainer1,
+    ValueProposalImageContainer2,
+    ValueProposalImages,
     ValueProposalMain,
 } from './ValueProposalSection.styles';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
@@ -20,7 +22,7 @@ const imagesSrc = {
 
 export const ValueProposalLayout = () => {
     const currentTheme = useContext(CurrentThemeContext);
-    const [, theme] = themedUseStyletron();
+    const [css, theme] = themedUseStyletron();
 
     return (
         <ValueProposalMain>
@@ -44,7 +46,7 @@ export const ValueProposalLayout = () => {
                     </ValueProposalContent>
                 </Cell>
                 <Cell span={[4, 8, 6]} align={ALIGNMENT.end}>
-                    {/* <ValueProposalImages>
+                    <ValueProposalImages>
                         <ValueProposalImageContainer1>
                             <Image
                                 src='/girl1.jpg'
@@ -67,14 +69,7 @@ export const ValueProposalLayout = () => {
                                 })}
                             />
                         </ValueProposalImageContainer2>
-                    </ValueProposalImages> */}
-                    <ValueProposalImageContainer1>
-                        <Image
-                            src={imagesSrc[currentTheme.id]}
-                            alt='Pura Serendipia'
-                            layout='fill'
-                        />
-                    </ValueProposalImageContainer1>
+                    </ValueProposalImages>
                 </Cell>
             </Grid>
         </ValueProposalMain>
