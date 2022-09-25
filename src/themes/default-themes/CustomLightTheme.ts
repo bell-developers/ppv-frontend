@@ -1,6 +1,6 @@
 import { createLightTheme } from 'baseui';
-import BaseThemeProperties from './BaseThemeProperties';
-import { CustomTheme } from './CustomTheme.type';
+import BaseThemeProperties from 'themes/BaseThemeProperties';
+import { CustomTheme } from 'themes/CustomTheme.type';
 
 const { primitives, overrides, custom } = BaseThemeProperties;
 

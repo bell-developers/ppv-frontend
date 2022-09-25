@@ -3,9 +3,9 @@ import 'styles/reset.css';
 import { Provider } from 'styletron-react';
 import { BaseProvider } from 'baseui';
 import { styletron } from 'utils/styletron';
-import { CustomLightTheme } from 'themes/CustomLightTheme';
+import { CustomLightTheme } from 'themes/default-themes/CustomLightTheme';
 import { createContext, useEffect, useState } from 'react';
-import { CustomDarkTheme } from 'themes/CustomDarkTheme';
+import { CustomDarkTheme } from 'themes/default-themes/CustomDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 
 type CurrentTheme = {
