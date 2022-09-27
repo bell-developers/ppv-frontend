@@ -38,7 +38,6 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     });
 
     useEffect(() => {
-        console.log(typeof localStorage.getItem('theme-id'));
         const storedTheme = localStorage.getItem('theme-id');
         if (storedTheme === 'null') setTheme('pura-serendipia');
         else setTheme(storedTheme || 'pura-serendipia');
