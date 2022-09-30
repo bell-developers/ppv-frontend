@@ -11,6 +11,7 @@ import {
     ValueProposalMain,
 } from './ValueProposalSection.styles';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
+import { SIZE, StyledDivider } from 'baseui/divider';
 
 export const ValueProposalLayout = () => {
     const [css, theme] = themedUseStyletron();
@@ -63,6 +64,7 @@ export const ValueProposalLayout = () => {
                     </ValueProposalImages>
                 </Cell>
             </Grid>
+            <StyledDivider $size={SIZE.cell} />
         </ValueProposalMain>
     );
 };
