@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const isDevelopmentEnv = process.env.NODE_ENV === 'development';
+// const isDevelopmentEnv = process.env.NODE_ENV === 'development';
 
-const ApiURL = isDevelopmentEnv
-    ? 'http://127.0.0.1:5000/catalog/20'
-    : 'http://127.0.0.1:5000/catalog';
+const ApiURL = process.env.NEXT_PUBLIC_API_URL + '/catalog/20';
 
-export const getCatalog = async () => (await axios.get(ApiURL)).data;
+export const getCatalog = async () => {
+    return (await axios.get(ApiURL)).data;
+};

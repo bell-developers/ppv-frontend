@@ -1,4 +1,4 @@
-import { HeadingLarge, LabelMedium } from 'baseui/typography';
+import { HeadingLarge } from 'baseui/typography';
 import CustomSpinner from 'components/custom-spinner/CustomSpinner';
 import ErrorMessage from 'components/error-message/ErrorMessage';
 import Footer from 'components/footer/Footer';
@@ -16,9 +16,6 @@ import {
     ProductNameAndPrice,
     ProductPageBody,
     ProductPrice,
-    ProductSize,
-    ProductSizesContainer,
-    ProductSizesSection,
     ProductSpinnerContainer,
 } from 'pages-content/product/layouts/ProductPage.layout';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';

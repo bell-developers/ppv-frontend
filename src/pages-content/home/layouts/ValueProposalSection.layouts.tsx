@@ -11,6 +11,19 @@ import {
     ValueProposalMain,
 } from './ValueProposalSection.styles';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
+<<<<<<< HEAD
+=======
+import { useContext } from 'react';
+import { CurrentThemeContext } from 'pages/_app';
+
+const imagesSrc = {
+    'default-light': '/isotype2-black.png',
+    'default-dark': '/isotype2-white.png',
+    'pura-serendipia': '/isotype2-primary.png',
+    greenday: '/isotype2-black.png',
+    'star-platinum': '/isotype2-black.png',
+};
+>>>>>>> main
 
 export const ValueProposalLayout = () => {
     const [css, theme] = themedUseStyletron();

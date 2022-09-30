@@ -18,10 +18,11 @@ export const ProductPageBody = themedStyled('div', ({ $theme }) => ({
 export const ProductContainer = themedStyled('div', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    width: $theme.custom.mainLayoutWidth,
+    width: '90%',
     borderRadius: $theme.borders.radius500,
     ...$theme.borders.border400,
     boxSizing: 'border-box',
+    margin: 'auto',
     [$theme.mediaQuery.medium]: {
         width: '60vw',
     },
@@ -114,5 +115,6 @@ export const ProductSize = themedStyled('div', ({ $theme }) => ({
 }));
 
 export const ProductCTA = themedStyled(Button, {
+    marginTop: '2rem',
     gridColumn: '1 / 3',
 });

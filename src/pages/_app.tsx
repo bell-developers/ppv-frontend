@@ -7,18 +7,24 @@ import { CustomLightTheme } from 'themes/default-themes/CustomLightTheme';
 import { createContext, useEffect, useState } from 'react';
 import { CustomDarkTheme } from 'themes/default-themes/CustomDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
+import { GreenDayTheme } from 'themes/greenday/GreenDayTheme';
+import { StarPlatinumTheme } from 'themes/star-platinum/StarPlatinumTheme';
 
 type CurrentTheme = {
     id: string;
     setCurrentTheme?: (id: string) => () => void;
 };
 
-export const CurrentThemeContext = createContext<CurrentTheme>({ id: 'default' });
+export const CurrentThemeContext = createContext<CurrentTheme>({
+    id: 'pura-serendipia',
+});
 
 const themes = {
     'default-light': CustomLightTheme,
     'default-dark': CustomDarkTheme,
     'pura-serendipia': PuraSerendipiaLightTheme,
+    greenday: GreenDayTheme,
+    'star-platinum': StarPlatinumTheme,
 };
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -32,7 +38,9 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     });
 
     useEffect(() => {
-        setTheme(localStorage.getItem('theme-id'));
+        const storedTheme = localStorage.getItem('theme-id');
+        if (storedTheme === 'null') setTheme('pura-serendipia');
+        else setTheme(storedTheme || 'pura-serendipia');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
