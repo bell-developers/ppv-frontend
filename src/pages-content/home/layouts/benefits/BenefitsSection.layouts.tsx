@@ -1,5 +1,5 @@
 import { DisplayXSmall } from 'baseui/typography';
-import Benefit from '../components/Benefit.component';
+import Benefit from '../../components/Benefit.component';
 import {
     BenefitsSectionContainer,
     BenefitsSectionTitleContainer,
