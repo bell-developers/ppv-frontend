@@ -5,6 +5,7 @@ import Header from 'components/header/Header';
 import Head from 'next/head';
 import { ValueProposalLayout } from 'pages-content/home/layouts/value-proposal/ValueProposalSection.layouts';
 import Footer from 'components/footer/Footer';
+import ClientsOpinionSectionLayout from 'pages-content/home/layouts/clients-opinion/ClientsOpinionSection.layouts';
 
 const HomePage: NextPage = () => {
     return (
@@ -14,6 +15,7 @@ const HomePage: NextPage = () => {
             </Head>
             <Header />
             <ValueProposalLayout />
+            <ClientsOpinionSectionLayout />
             <BenefitsSectionLayout />
             <Footer />
         </HomeBody>
