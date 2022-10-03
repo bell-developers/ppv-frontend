@@ -3,9 +3,17 @@ import themedStyled from 'themes/utils/themedStyled';
 export const ClientsOpinionSectionContainer = themedStyled('section', ({ $theme }) => ({
     display: 'flex',
     flexDirection: 'column',
+    maxWidth: '100vw',
     width: $theme.custom.pageMaxWidth,
-    padding: '4rem 0',
+    padding: '2rem 1rem',
     color: $theme.colors.contentPrimary,
+    boxSizing: 'border-box',
+    [$theme.mediaQuery.large]: {
+        padding: '4rem 0',
+    },
+    [$theme.mediaQuery.medium]: {
+        padding: '3rem 15vw',
+    },
 }));
 
 export const ClientsOpinionSectionHeadingStyles = {
@@ -24,7 +32,9 @@ export const ClientsOpinionSectionSubHeadingStyles = {
 export const ClientsOpinionSectionCardsContainer = themedStyled('div', {
     display: 'flex',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
     gap: '1rem',
+    width: '100%',
     marginTop: '2rem',
 });
 
@@ -32,12 +42,13 @@ export const ClientsOpinionSectionCard = themedStyled('div', ({ $theme }) => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
+    flex: '1 1 225px',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '1rem',
     textAlign: 'center',
     marginTop: '1.5rem',
-    width: '100%',
+    width: 'min(120px, 100%)',
     padding: '3rem 1.5rem 1.5rem 1.5rem',
     backgroundColor: $theme.colors.backgroundSecondary,
 }));
