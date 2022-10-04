@@ -39,7 +39,6 @@ const Header = (props: HeaderProps) => {
                         top: 0,
                         width: $theme.custom.mainLayoutWidth,
                         zIndex: 10,
-                        borderBottomColor: $theme.borders.border200.borderColor,
                         boxSizing: 'border-box',
                         paddingRight: '1rem',
                         paddingLeft: '1rem',
