@@ -60,7 +60,7 @@ const Header = (props: HeaderProps) => {
                                       left: '0',
                                       right: '0',
                                       width: '100vw',
-                                      height: '3.75rem',
+                                      height: '60.5px',
                                       backgroundColor: $theme.colors.backgroundPrimary,
                                       zIndex: '-1',
                                   }
