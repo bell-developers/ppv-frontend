@@ -1,7 +1,6 @@
-import { createLightTheme } from 'baseui';
 import { CustomTheme } from 'themes/CustomTheme.type';
 import { Colors } from 'baseui/styles';
-import BaseThemeProperties from 'themes/BaseThemeProperties';
+import createPPVTheme from 'themes/utils/createPPVTheme';
 
 const overrides: { colors: Partial<Colors> } = {
     colors: {
@@ -23,7 +22,7 @@ const overrides: { colors: Partial<Colors> } = {
     },
 };
 
-export const GreenDayTheme: CustomTheme = {
-    ...createLightTheme(BaseThemeProperties.primitives, overrides),
-    custom: BaseThemeProperties.custom,
-};
+export const GreenDayTheme: CustomTheme = createPPVTheme({
+    type: 'light',
+    overrides,
+});

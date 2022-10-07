@@ -3,9 +3,9 @@ import 'styles/reset.css';
 import { Provider } from 'styletron-react';
 import { BaseProvider } from 'baseui';
 import { styletron } from 'utils/styletron';
-import { CustomLightTheme } from 'themes/default-themes/CustomLightTheme';
+import { DefaultLightTheme } from 'themes/default-themes/DefaultLightTheme';
 import { createContext, useEffect, useState } from 'react';
-import { CustomDarkTheme } from 'themes/default-themes/CustomDarkTheme';
+import { DefaultDarkTheme } from 'themes/default-themes/DefaultDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 import { GreenDayTheme } from 'themes/greenday/GreenDayTheme';
 import { StarPlatinumTheme } from 'themes/star-platinum/StarPlatinumTheme';
@@ -20,8 +20,8 @@ export const CurrentThemeContext = createContext<CurrentTheme>({
 });
 
 const themes = {
-    'default-light': CustomLightTheme,
-    'default-dark': CustomDarkTheme,
+    'default-light': DefaultLightTheme,
+    'default-dark': DefaultDarkTheme,
     'pura-serendipia': PuraSerendipiaLightTheme,
     greenday: GreenDayTheme,
     'star-platinum': StarPlatinumTheme,
