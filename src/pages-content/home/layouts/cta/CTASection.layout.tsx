@@ -1,11 +1,5 @@
 import { Button, SIZE } from 'baseui/button';
-import {
-    DisplaySmall,
-    HeadingLarge,
-    HeadingMedium,
-    LabelLarge,
-    LabelMedium,
-} from 'baseui/typography';
+import { DisplaySmall, HeadingLarge, HeadingMedium, LabelLarge } from 'baseui/typography';
 import Image from 'next/image';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import {
@@ -28,6 +22,10 @@ function CTASectionLayout() {
                         Block: {
                             style: {
                                 fontWeight: 700,
+                                textAlign: 'center',
+                                [theme.mediaQuery.large]: {
+                                    textAlign: 'start',
+                                },
                             },
                         },
                     }}
