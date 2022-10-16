@@ -11,6 +11,9 @@ const overrides = {
         buttonPrimaryText: DarkTheme.colors.contentPrimary,
         buttonPrimaryHover: DarkTheme.colors.accent500,
     },
+    borders: {
+        inputBorderRadius: '.5rem',
+    },
 };
 
 const custom: CustomTheme['custom'] = {
