@@ -7,8 +7,12 @@ import { FormControl } from 'baseui/form-control';
 import { Input } from 'baseui/input';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import Head from 'next/head';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { User } from 'models/User.model';
 
 function LoginPage() {
+    const { control, handleSubmit } = useForm<User>();
+    const onSubmit: SubmitHandler<User> = data => console.log(data);
     const [, theme] = themedUseStyletron();
 
     return (
@@ -32,34 +36,44 @@ function LoginPage() {
                     },
                 }}
             >
-                <StyledBody>
-                    <HeadingLarge
-                        overrides={{
-                            Block: {
-                                style: {
-                                    marginBottom: '1.5rem',
-                                    marginTop: '1.5rem',
-                                    fontWeight: '600',
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <StyledBody>
+                        <HeadingLarge
+                            overrides={{
+                                Block: {
+                                    style: {
+                                        marginBottom: '1.5rem',
+                                        marginTop: '1.5rem',
+                                        fontWeight: '600',
+                                    },
                                 },
-                            },
-                        }}
-                    >
-                        Iniciar sesión
-                    </HeadingLarge>
-                    <FormControl label={() => <ParagraphMedium>Usuario</ParagraphMedium>}>
-                        <Input />
-                    </FormControl>
-                    <FormControl
-                        label={() => <ParagraphMedium>Contraseña</ParagraphMedium>}
-                    >
-                        <Input type='password' />
-                    </FormControl>
-                </StyledBody>
-                <StyledAction>
-                    <Button overrides={{ BaseButton: { style: { width: '100%' } } }}>
-                        Iniciar sesión
-                    </Button>
-                </StyledAction>
+                            }}
+                        >
+                            Iniciar sesión
+                        </HeadingLarge>
+                        <FormControl label={<ParagraphMedium>Usuario</ParagraphMedium>}>
+                            <Controller
+                                name='username'
+                                control={control}
+                                render={({ field }) => <Input {...field} />}
+                            />
+                        </FormControl>
+                        <FormControl
+                            label={<ParagraphMedium>Contraseña</ParagraphMedium>}
+                        >
+                            <Controller
+                                name='password'
+                                control={control}
+                                render={({ field }) => <Input {...field} />}
+                            />
+                        </FormControl>
+                    </StyledBody>
+                    <StyledAction>
+                        <Button overrides={{ BaseButton: { style: { width: '100%' } } }}>
+                            Iniciar sesión
+                        </Button>
+                    </StyledAction>
+                </form>
             </Card>
         </LoginPageBody>
     );
