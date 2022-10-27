@@ -1,4 +1,5 @@
 import { HeadingLarge, LabelLarge, LabelSmall } from 'baseui/typography';
+import Heading from 'components/heading/Heading';
 import Image from 'next/image';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import {
@@ -7,7 +8,6 @@ import {
     ClientsOpinionSectionCardImageStyles,
     ClientsOpinionSectionCardsContainer,
     ClientsOpinionSectionContainer,
-    ClientsOpinionSectionHeadingStyles,
     ClientsOpinionSectionSubHeadingStyles,
 } from './ClientsOpinionSection.styles';
 
@@ -16,15 +16,7 @@ function ClientsOpinionSectionLayout() {
 
     return (
         <ClientsOpinionSectionContainer>
-            <HeadingLarge
-                overrides={{
-                    Block: {
-                        style: ClientsOpinionSectionHeadingStyles,
-                    },
-                }}
-            >
-                Nuestros clientes
-            </HeadingLarge>
+            <Heading>Nuestros clientes</Heading>
             <LabelLarge
                 overrides={{
                     Block: {

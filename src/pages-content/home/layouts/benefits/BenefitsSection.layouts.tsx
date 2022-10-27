@@ -1,4 +1,4 @@
-import { DisplayXSmall } from 'baseui/typography';
+import Heading from 'components/heading/Heading';
 import Benefit from '../../components/Benefit.component';
 import {
     BenefitsSectionContainer,
@@ -9,19 +9,7 @@ const BenefitsSectionLayout = () => {
     return (
         <BenefitsSectionContainer>
             <BenefitsSectionTitleContainer>
-                <DisplayXSmall
-                    as='h3'
-                    overrides={{
-                        Block: {
-                            style: ({ $theme }) => ({
-                                fontWeight: 600,
-                                color: $theme.colors.contentPrimary,
-                            }),
-                        },
-                    }}
-                >
-                    ¡Animate a comprar por internet!
-                </DisplayXSmall>
+                <Heading>¡Animate a comprar por internet!</Heading>
             </BenefitsSectionTitleContainer>
             <Benefit
                 title='Comprá desde tu casa'

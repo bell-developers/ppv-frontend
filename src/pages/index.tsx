@@ -7,6 +7,7 @@ import { ValueProposalLayout } from 'pages-content/home/layouts/value-proposal/V
 import Footer from 'components/footer/Footer';
 import ClientsOpinionSectionLayout from 'pages-content/home/layouts/clients-opinion/ClientsOpinionSection.layouts';
 import CTASectionLayout from 'pages-content/home/layouts/cta/CTASection.layout';
+import { HeadingLevel } from 'baseui/heading';
 
 const HomePage: NextPage = () => {
     return (
@@ -14,12 +15,16 @@ const HomePage: NextPage = () => {
             <Head>
                 <title>Inicio - Bell</title>
             </Head>
-            <Header fullWidth={true} />
-            <ValueProposalLayout />
-            <ClientsOpinionSectionLayout />
-            <CTASectionLayout />
-            <BenefitsSectionLayout />
-            <Footer />
+            <HeadingLevel>
+                <Header fullWidth={true} />
+                <ValueProposalLayout />
+                <HeadingLevel>
+                    <ClientsOpinionSectionLayout />
+                    <CTASectionLayout />
+                    <BenefitsSectionLayout />
+                    <Footer />
+                </HeadingLevel>
+            </HeadingLevel>
         </HomeBody>
     );
 };

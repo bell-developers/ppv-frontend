@@ -1,5 +1,6 @@
 import { Button, SIZE } from 'baseui/button';
 import { DisplaySmall, HeadingLarge, HeadingMedium, LabelLarge } from 'baseui/typography';
+import Heading from 'components/heading/Heading';
 import Image from 'next/image';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import {
@@ -17,22 +18,17 @@ function CTASectionLayout() {
     return (
         <CTASectionBackground>
             <CTASectionContainer>
-                <HeadingLarge
-                    overrides={{
-                        Block: {
-                            style: {
-                                fontWeight: 700,
-                                textAlign: 'center',
-                                [theme.mediaQuery.large]: {
-                                    textAlign: 'start',
-                                },
-                            },
+                <Heading
+                    styleOverrides={{
+                        textAlign: 'center',
+                        [theme.mediaQuery.large]: {
+                            textAlign: 'start',
                         },
+                        color: theme.colors.buttonPrimaryText,
                     }}
-                    color={theme.colors.buttonPrimaryText}
                 >
                     APROVECHÁ NUESTRAS OFERTAS DE HASTA UN 15% DE DESCUENTO!!
-                </HeadingLarge>
+                </Heading>
                 <CTASectionProductContainer>
                     <CTASectionProductImageContainer>
                         <Image
