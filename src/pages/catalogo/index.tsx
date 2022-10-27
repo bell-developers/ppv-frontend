@@ -1,4 +1,3 @@
-import { DisplaySmall } from 'baseui/typography';
 import Header from 'components/header/Header';
 import { NextPage } from 'next';
 import { CatalogProduct } from 'pages-content/catalog/components/CatalogProduct.component';
