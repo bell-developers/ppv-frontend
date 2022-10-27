@@ -8,6 +8,7 @@ export const ClientsOpinionSectionContainer = themedStyled('section', ({ $theme 
     padding: '2rem 1rem',
     color: $theme.colors.contentPrimary,
     boxSizing: 'border-box',
+    textAlign: 'center',
     [$theme.mediaQuery.large]: {
         padding: '4rem 0',
     },

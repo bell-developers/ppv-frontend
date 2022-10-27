@@ -12,6 +12,7 @@ import {
 } from './ValueProposalSection.styles';
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import { SIZE, StyledDivider } from 'baseui/divider';
+import Heading from 'components/heading/Heading';
 
 export const ValueProposalLayout = () => {
     const [css, theme] = themedUseStyletron();
@@ -21,14 +22,7 @@ export const ValueProposalLayout = () => {
             <Grid gridMargins={0} align={ALIGNMENT.center} gridGaps={32}>
                 <Cell span={[4, 8, 6]} order={[1, 1, 0]}>
                     <ValueProposalContent>
-                        <DisplayMedium
-                            $style={{
-                                fontSize: 'clamp(3.25rem, 3.90vw, 4rem)',
-                                fontWeight: '700',
-                            }}
-                        >
-                            Pura Serendipia
-                        </DisplayMedium>
+                        <Heading>Pura Serendipia</Heading>
                         <HeadingXSmall color={theme.colors.contentSecondary}>
                             Accesorios en acero quirúrgico
                         </HeadingXSmall>

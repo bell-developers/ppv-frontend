@@ -1,4 +1,5 @@
 import { DarkTheme } from 'baseui';
+import HeadingStyles from 'styles/HeadingStyles';
 import { CustomTheme } from './CustomTheme.type';
 
 const primitives = {
@@ -19,6 +20,7 @@ const overrides = {
 const custom: CustomTheme['custom'] = {
     pageMaxWidth: '900px',
     mainLayoutWidth: `min(900px, 100%)`,
+    headings: HeadingStyles(primitives),
 };
 
 const BaseThemeProperties = {
