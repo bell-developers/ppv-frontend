@@ -6,7 +6,7 @@ import Header from 'components/header/Header';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useLoadProduct } from 'pages-content/product/hooks/useLoadProduct';
+import useLoadProduct from 'pages-content/product/hooks/useLoadProduct';
 import {
     ProductContainer,
     ProductContentContainer,
@@ -21,9 +21,9 @@ import {
 import themedUseStyletron from 'themes/utils/themedUseStyletron';
 
 function ProductPage() {
-    const { query, isReady } = useRouter();
+    const { query } = useRouter();
     const queryId = Array.isArray(query.id) ? query.id[0] : query.id;
-    const { productData, loading, error } = useLoadProduct(queryId, isReady);
+    const { data: productData, isLoading, isError } = useLoadProduct(queryId);
     const [css, theme] = themedUseStyletron();
 
     return (
@@ -32,10 +32,10 @@ function ProductPage() {
                 <title>Producto</title>
             </Head>
             <Header />
-            {error === true && (
+            {isError === true && (
                 <ErrorMessage containerStyles={() => ProductErrorMessageContainer} />
             )}
-            {loading && (
+            {isLoading && (
                 <ProductSpinnerContainer>
                     <CustomSpinner />
                 </ProductSpinnerContainer>
@@ -67,14 +67,6 @@ function ProductPage() {
                             <HeadingLarge>{productData?.name}</HeadingLarge>
                             <ProductPrice>{productData?.price}ARS</ProductPrice>
                         </ProductNameAndPrice>
-                        {/* <ProductSizesSection>
-                            <LabelMedium>Talles</LabelMedium>
-                            <ProductSizesContainer>
-                                {sizes.map(size => (
-                                    <ProductSize key={size}>{size}</ProductSize>
-                                ))}
-                            </ProductSizesContainer>
-                        </ProductSizesSection> */}
                         <ProductCTA>Comprar</ProductCTA>
                     </ProductContentContainer>
                 </ProductContainer>

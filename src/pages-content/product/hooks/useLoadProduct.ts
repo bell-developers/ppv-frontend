@@ -1,39 +1,10 @@
 import adaptProduct from 'pages-content/product/adapters/adaptProduct';
-import { Product } from 'models/Product.model';
-import { useState, useEffect } from 'react';
 import getProductFromRepository from '../services/getProductFromRepository';
+import { useQuery } from 'react-query';
 
-type UseLoadProductReturn = {
-    productData: Product;
-    loading: boolean;
-    error: boolean;
-};
+const useLoadProduct = (id: string) =>
+    useQuery(['products', String(id)], async () =>
+        adaptProduct(await getProductFromRepository(id))
+    );
 
-type UseLoadProduct = (id: string, isReady: boolean) => UseLoadProductReturn;
-
-export const useLoadProduct: UseLoadProduct = (id, isReady) => {
-    const [productData, setProductData] = useState<Product>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<boolean>(false);
-
-    const loadProduct = async () => {
-        try {
-            setError(false);
-            setLoading(true);
-            setProductData(adaptProduct(await getProductFromRepository(id)));
-            setLoading(false);
-        } catch (e) {
-            setLoading(false);
-            setError(true);
-        }
-    };
-
-    useEffect(() => {
-        if (isReady === false) return () => setLoading(false);
-        loadProduct();
-        return () => setLoading(false);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isReady]);
-
-    return { productData, loading, error };
-};
+export default useLoadProduct;
