@@ -1,5 +1,5 @@
 import { Product } from 'models/Product.model';
-import { Adapter } from './Adapter.type';
+import { Adapter } from '../../../adapters/Adapter.type';
 
 type RequestEntryElement = {
     id: number;

@@ -9,6 +9,7 @@ import { DefaultDarkTheme } from 'themes/default-themes/DefaultDarkTheme';
 import { PuraSerendipiaLightTheme } from 'themes/pura-serendipia/PuraSerendipiaLightTheme';
 import { GreenDayTheme } from 'themes/greenday/GreenDayTheme';
 import { StarPlatinumTheme } from 'themes/star-platinum/StarPlatinumTheme';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 type CurrentTheme = {
     id: string;
@@ -26,6 +27,8 @@ const themes = {
     greenday: GreenDayTheme,
     'star-platinum': StarPlatinumTheme,
 };
+
+const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     const setTheme = (id: string) => {
@@ -46,12 +49,14 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
     return (
         <Provider value={styletron}>
-            {/* Pass your theme in theme props */}
-            <CurrentThemeContext.Provider value={CurrentTheme}>
-                <BaseProvider theme={themes[CurrentTheme.id]}>
-                    <Component {...pageProps} />
-                </BaseProvider>
-            </CurrentThemeContext.Provider>
+            <QueryClientProvider client={queryClient}>
+                {/* Pass your theme in theme props */}
+                <CurrentThemeContext.Provider value={CurrentTheme}>
+                    <BaseProvider theme={themes[CurrentTheme.id]}>
+                        <Component {...pageProps} />
+                    </BaseProvider>
+                </CurrentThemeContext.Provider>
+            </QueryClientProvider>
         </Provider>
     );
 }

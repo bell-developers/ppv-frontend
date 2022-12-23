@@ -17,7 +17,7 @@ import { HeadingLevel } from 'baseui/heading';
 import Heading from 'components/heading/Heading';
 
 const CatalogPage: NextPage = () => {
-    const { loading, productsData, error } = useLoadCatalog();
+    const { isLoading, data: productsData, isError } = useLoadCatalog();
 
     return (
         <CatalogBody>
@@ -30,10 +30,10 @@ const CatalogPage: NextPage = () => {
                     <Heading styledAs='h2'>Catálogo</Heading>
                 </CatalogTitleContainer>
                 <CatalogProductsContainer>
-                    {error === true && (
+                    {isError === true && (
                         <ErrorMessage containerStyles={CatalogErrorMessageStyles} />
                     )}
-                    {loading === true && (
+                    {isLoading === true && (
                         <CatalogSpinnerContainer>
                             <CustomSpinner />
                         </CatalogSpinnerContainer>

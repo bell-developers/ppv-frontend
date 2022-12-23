@@ -1,5 +1,5 @@
 import { Product } from 'models/Product.model';
-import { Adapter } from './Adapter.type';
+import { Adapter } from '../../../adapters/Adapter.type';
 
 // Waiting API implements images
 // const adaptImage = (image: string) => 'data:image/jpg;base64,' + image.slice(2, -1);

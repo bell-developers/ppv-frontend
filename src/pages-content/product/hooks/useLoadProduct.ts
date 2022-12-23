@@ -1,7 +1,7 @@
-import adaptProduct from 'adapters/adaptProduct';
+import adaptProduct from 'pages-content/product/adapters/adaptProduct';
 import { Product } from 'models/Product.model';
 import { useState, useEffect } from 'react';
-import { getProduct } from 'services/get/getProduct';
+import getProductFromRepository from '../services/getProductFromRepository';
 
 type UseLoadProductReturn = {
     productData: Product;
@@ -20,7 +20,7 @@ export const useLoadProduct: UseLoadProduct = (id, isReady) => {
         try {
             setError(false);
             setLoading(true);
-            setProductData(adaptProduct(await getProduct(id)));
+            setProductData(adaptProduct(await getProductFromRepository(id)));
             setLoading(false);
         } catch (e) {
             setLoading(false);

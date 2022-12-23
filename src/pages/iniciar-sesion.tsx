@@ -1,5 +1,5 @@
 import Header from 'components/header/Header';
-import { LoginPageBody } from 'pages-content/login/LoginPage.layout';
+import { LoginPageBody } from 'pages-content/login/layouts/LoginPage.layout';
 import { Card, StyledBody, StyledAction } from 'baseui/card';
 import { Button } from 'baseui/button';
 import { HeadingLarge, ParagraphMedium } from 'baseui/typography';
@@ -9,10 +9,12 @@ import themedUseStyletron from 'themes/utils/themedUseStyletron';
 import Head from 'next/head';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { User } from 'models/User.model';
+import useLogin from 'pages-content/login/hooks/useLogin';
 
 function LoginPage() {
     const { control, handleSubmit } = useForm<User>();
-    const onSubmit: SubmitHandler<User> = data => console.log(data);
+    const { mutate, isLoading } = useLogin();
+    const onSubmit: SubmitHandler<User> = data => mutate(data);
     const [, theme] = themedUseStyletron();
 
     return (
@@ -69,7 +71,10 @@ function LoginPage() {
                         </FormControl>
                     </StyledBody>
                     <StyledAction>
-                        <Button overrides={{ BaseButton: { style: { width: '100%' } } }}>
+                        <Button
+                            overrides={{ BaseButton: { style: { width: '100%' } } }}
+                            isLoading={isLoading}
+                        >
                             Iniciar sesión
                         </Button>
                     </StyledAction>
