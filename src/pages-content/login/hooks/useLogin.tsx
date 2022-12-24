@@ -1,8 +1,6 @@
 import { useMutation } from 'react-query';
-import { User } from 'models/User.model';
-import saveUserInRepository from 'pages-content/login/services/saveUserInRepository';
+import loginUser from '../usecases/loginUser';
 
-const useLogin = () =>
-    useMutation(async (user: User) => await saveUserInRepository(user));
+const useLogin = () => useMutation(loginUser);
 
 export default useLogin;
