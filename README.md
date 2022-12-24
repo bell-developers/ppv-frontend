@@ -29,19 +29,22 @@ La aplicación cuenta con una organización de carpetas ya definida. La cual con
 
 **Las siguientes carpetas se encuentran dentro de src:**
 
--   **services**: se encuentran las funciones que realizan el consumo de servicios, por ejemplo un REST API. A su vez esta carpeta está separada en subcarpetas clasificadas por el tipo de servicio, por ejemplo el servicio getCatalog se encuentra dentro de /get.
--   **adapters**: se encuentran las funciones que adaptan los datos obtenidos de servicios externos. Esto se realiza para que esta diferencia entre datos externos y datos de la aplicación no genere problemas y el formato de los datos en la aplicación se mantengan consistentes.
--   **components**: se encuentran los componentes de la aplicación los cuales son reutilizables en más de una página, por ejemplo el Header o el ErrorMessage.
-    Cada componente tiene su carpeta y archivo principal con su respectivo nombre. Además puede tener un archivo de estilos el cual tendrá el nombre del componente seguido de un .styles.
-    Por ejemplo: el componente Header se encuentra dentro de components/header/Header.tsx y posee su archivo de estilos Header.styles.ts.
--   **models**: se encuentran los modelos que se utilizan en la aplicación. Normalmente son archivos que exportan uno o más tipos que representan una entidad en la aplicación. Por ejemplo: el modelo Product. Cada archivo debe contener su nombre y la extensión .model.ts
+-   **services**: se encuentran las funciones que comunican la aplicación con agentes externos, por ejemplo una REST API.
+
+-   **adapters**: se encuentran las funciones que transforman los datos obtenidos de servicios externos a datos específicos para la aplicación. Esto se realiza para que esta diferencia entre datos externos y datos de la aplicación no genere problemas y el formato de los datos en la aplicación se mantenga consistente.
+
+-   **components**: se encuentran los componentes de la aplicación los cuales son reutilizables en
+    más de una página, por ejemplo el Header o el ErrorMessage. Cada componente tiene su carpeta y archivo principal con su respectivo nombre. Además puede tener un archivo de estilos el cual tendrá el nombre del componente seguido de un .styles.
+
+-   **models**: se encuentran los modelos que representan a entidades de la lógica de negocio, típicamente son tipos e interfaces de TypeScript. Cada archivo debe contener su nombre y la extensión .model.ts
+
 -   **styles**: se encuentran los estilos base de la aplicación y resets.
+
 -   **utils**: se encuentran aquellas funciones y variables que se puedan reutilizar y su lógica no pertenezca a ninguna sección concreta de la aplicación.
--   **pages-content:** se encuentran los componentes, layouts y hooks que componen a las páginas.
+
+-   **pages-content:** se encuentran los archivos relacionados a una página en específico. Podemos encontrar carpetas similares a las anteriores vistas, con la diferencia de que estas carpetas contienen elementos pertenecientes únicamente a la página.
+
     Dentro de _pages-content_ debe existir una carpeta para cada página, el nombre de esta tiene que ser el mismo que en el de _pages_ (se permite la traducción a inglés del nombre). Por ejemplo si existe un archivo pages/index.tsx, se debe crear una carpeta
     pages-content/home y se debe volcar todo el contenido de la página de inicio dentro de la misma.
-    Cada carpeta de página puede contener una carpeta:
-    -   **layouts:** donde se encontrarían los styled-components que construyen la estructura de la misma y no son reutilizados. Por ejemplo el contenedor Main de una página.
-    -   **components:** donde se encontrarían los componentes que posean lógica propia y su implementación requiera algo más que solo estilos. Estos componentes
--   **pages**: se encuentran las rutas de la aplicación. Esta carpeta se reserva exclusivamente para el enrutamiento que NextJS ofrece, no se debe insertar ningun archivo que no pertenezca a la página misma dentro de esta carpeta.
-    Los archivos que se encuentran dentro de carpeta _pages_ solo deben estructurar la página y aplicar su lógica, usando los estilos, funciones y hooks de _pages-layout_. Es posible realizar distintas secciones por página, esto depende de cual forma sea más legible.
+
+-   **pages**: se encuentran las rutas de la aplicación. Esta carpeta se reserva exclusivamente para el enrutamiento que NextJS ofrece, no se debe insertar ningun archivo que no pertenezca a la página misma dentro de esta carpeta. Los archivos que se encuentran dentro de la carpeta _pages_ solo deben estructurar la página y aplicar su lógica, usando los estilos, funciones y hooks de _pages-content_.
