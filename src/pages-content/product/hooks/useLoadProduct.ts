@@ -1,10 +1,7 @@
-import adaptProduct from 'pages-content/product/adapters/adaptProduct';
-import getProductFromRepository from '../services/getProductFromRepository';
 import { useQuery } from 'react-query';
+import loadProduct from '../usecases/loadProduct';
 
 const useLoadProduct = (id: string) =>
-    useQuery(['products', String(id)], async () =>
-        adaptProduct(await getProductFromRepository(id))
-    );
+    useQuery(['products', id], async () => await loadProduct(id));
 
 export default useLoadProduct;
